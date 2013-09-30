@@ -1,0 +1,534 @@
+Tcapybara-touch
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist
+cProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch normal i386
+cGenerateDSYMFile /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app.dSYM /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch
+cCopyStringsFile /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/en.lproj/InfoPlist.strings capybara-touch/en.lproj/InfoPlist.strings
+cCpResource capybara-touch/Default.png build/Debug-iphonesimulator/capybara-touch.app/Default.png
+cCpResource capybara-touch/Default@2x.png build/Debug-iphonesimulator/capybara-touch.app/Default@2x.png
+cCpResource capybara-touch/Default-568h@2x.png build/Debug-iphonesimulator/capybara-touch.app/Default-568h@2x.png
+cCpResource capybara-touch/capybara.js build/Debug-iphonesimulator/capybara-touch.app/capybara.js
+cTouch /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk
+c0000000051C7A4F10000000000000110
+t1372038385
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000005178A5170000000000228FE0
+t1366861079
+s2265056
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000005178A51800000000003DDFA0
+t1366861080
+s4054944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000005178A51700000000000015F7
+t1366861079
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000005178A51A0000000000000E8D
+t1366861082
+s3725
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000005178A51C0000000000AB6230
+t1366861084
+s11231792
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/Availability.h
+c000000005178A5250000000000001B73
+t1366861093
+s7027
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+c00000000521BCCE50000000000000176
+t1377553637
+s374
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
+c00000000522ACC8F00000000000003B5
+t1378536591
+s949
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000522ACCD2000000000000019E
+t1378536658
+s414
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000522ACCEE0000000000445830
+t1378536686
+s4479024
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000522ACCFA000000000088B570
+t1378536698
+s8959344
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000522ACD200000000001DB1C90
+t1378536736
+s31136912
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app
+t1380560145
+s340
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app.dSYM
+t1372422351
+s102
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Default-568h@2x.png
+t1372395140
+s18594
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Default.png
+t1372395140
+s6540
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Default@2x.png
+t1372395140
+s16107
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist
+t1380560144
+s1024
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/PkgInfo
+t1380560144
+s8
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch
+t1380560145
+s35972
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara.js
+t1372395140
+s9395
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/en.lproj/InfoPlist.strings
+t1372395140
+s42
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o
+t1380560145
+s64060
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o
+t1380560145
+s58484
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o
+t1380560145
+s28820
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/capybara-touch.LinkFileList
+c0000000051CD16830000000000000262
+t1372395139
+s610
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o
+t1380560145
+s3312
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.h
+c0000000051C8CFF30000000000000140
+t1372114931
+s320
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m
+c0000000051C8D03B000000000000019E
+t1372115003
+s414
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.h
+c0000000051C8D7BB00000000000000EE
+t1372116923
+s238
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m
+c000000005249ACED0000000000000644
+t1380560109
+s1604
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/Default-568h@2x.png
+c00000000515C9E6200000000000048A2
+t1365024354
+s18594
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/Default.png
+c00000000515C9E62000000000000198C
+t1365024354
+s6540
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/Default@2x.png
+c00000000515C9E620000000000003EEB
+t1365024354
+s16107
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.h
+c0000000051CD80A0000000000000061F
+t1372422304
+s1567
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m
+c0000000051CD80CC0000000000001DA5
+t1372422348
+s7589
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist
+c0000000051C8CE1A00000000000005B6
+t1372114458
+s1462
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch
+c0000000051C8CE1A000000000000014B
+t1372114458
+s331
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara.js
+c0000000051C8C99D00000000000024B3
+t1372113309
+s9395
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/en.lproj/InfoPlist.strings
+c0000000051C8CE1A000000000000002D
+t1372114458
+s45
+
+N/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m
+c0000000051C8D0010000000000000162
+t1372114945
+s354
+
+N/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.pch
+t1380560144
+s5334392
+
+N/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.pch
+t1380560144
+s5346144
+
+N/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-afvifctmxlgtbgfiehbrjpsuqreg/capybara-touch-Prefix.pch.pth
+t1372395140
+s4668376
+
+N/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-gdsxlgimvccfsgfcgvjaqdhesuar/capybara-touch-Prefix.pch.pth
+t1372395139
+s4678444
+
+Ncapybara-touch/capybara-touch-Info.plist
+c0000000051C8CE1A00000000000005B6
+t1372114458
+s1462
+
+CBuild AST from /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m
+r0
+
+CBuild AST from /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m
+r0
+
+CBuild AST from /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m
+r0
+
+CBuild AST from /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies21c85190e4f9b741^745d5c90e4f9b741^---0#1#1#--18"Check dependencies36"883C1674-9116-4522-8CC1-719F0BB87089-
+
+CCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s402252944.864559
+e402252945.071213
+r1
+xCompileC
+xbuild/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.h
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.h
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m213"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o capybara-touch/CTAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler5e84dd90e4f9b741^80601291e4f9b741^---0#0#1#-19%DVTDocumentLocation2@95"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m0000000000000000^4002"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o capybara-touch/CTAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -include /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch -MMD -MT dependencies -MF /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.d --serialize-diagnostics /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.dia -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.m -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o36"D982969B-12F5-44C5-B6C3-E66B0AEF6ABA-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s402252944.865374
+e402252945.070971
+r1
+xCompileC
+xbuild/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.h
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m219"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o capybara-touch/CTViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler0fb5dd90e4f9b741^475a1291e4f9b741^---0#0#1#-19%DVTDocumentLocation2@98"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m0000000000000000^4020"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o capybara-touch/CTViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -include /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch -MMD -MT dependencies -MF /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.d --serialize-diagnostics /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.dia -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTViewController.m -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o36"E7B6830A-A973-445D-8BF0-13BDE5B4BBAC-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s402252944.865478
+e402252945.071953
+r1
+xCompileC
+xbuild/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m205"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o capybara-touch/TCPServer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler1bbedd90e4f9b741^e3701291e4f9b741^---0#0#1#-19%DVTDocumentLocation2@91"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m0000000000000000^3992"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o capybara-touch/TCPServer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -fno-objc-arc -include /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch -MMD -MT dependencies -MF /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.d --serialize-diagnostics /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.dia -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/TCPServer.m -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o36"4435F6C1-9F11-4E9A-815A-83789E5E5A37-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CCompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s402252944.864516
+e402252945.069258
+r1
+xCompileC
+xbuild/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/CTAppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m195"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o capybara-touch/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd883dd90e4f9b741^d3f41191e4f9b741^---0#0#1#-19%DVTDocumentLocation2@86"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m0000000000000000^3948"CompileC build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o capybara-touch/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -include /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch -MMD -MT dependencies -MF /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.dia -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/main.m -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o36"627FBE4F-F25F-4583-8738-1E52B1B95D09-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CCopyStringsFile /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/en.lproj/InfoPlist.strings capybara-touch/en.lproj/InfoPlist.strings
+s394087940.320168
+e394087940.323755
+r1
+xCopyStringsFile
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/en.lproj/InfoPlist.strings
+xcapybara-touch/en.lproj/InfoPlist.strings
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection46"Copy capybara-touch/en.lproj/InfoPlist.strings401252044e7db741^1c2953044e7db741^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/en.lproj/InfoPlist.strings0000000000000000^623"CopyStringsFile build/Debug-iphonesimulator/capybara-touch.app/en.lproj/InfoPlist.strings capybara-touch/en.lproj/InfoPlist.strings    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/en.lproj -- capybara-touch/en.lproj/InfoPlist.strings36"77D236C2-42B4-4518-8B08-13AE67969A7A-
+
+CCpResource capybara-touch/Default-568h@2x.png build/Debug-iphonesimulator/capybara-touch.app/Default-568h@2x.png
+s394087940.321405
+e394087940.326310
+r1
+xCpResource
+xcapybara-touch/Default-568h@2x.png
+xbuild/Debug-iphonesimulator/capybara-touch.app/Default-568h@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Copy build/Debug-iphonesimulator/capybara-touch.app/Default-568h@2x.png4f5c52044e7db741^2b8a53044e7db741^---0#0#0#-19%DVTDocumentLocation2@131"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Default-568h@2x.png000000000080d041^662"CpResource "capybara-touch/Default-568h@2x.png" "build/Debug-iphonesimulator/capybara-touch.app/Default-568h@2x.png"    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/Default-568h@2x.png" /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app36"4E7B62E5-800E-4616-9406-7BA402181F05-
+
+CCpResource capybara-touch/Default.png build/Debug-iphonesimulator/capybara-touch.app/Default.png
+s394087940.320792
+e394087940.324730
+r1
+xCpResource
+xcapybara-touch/Default.png
+xbuild/Debug-iphonesimulator/capybara-touch.app/Default.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy build/Debug-iphonesimulator/capybara-touch.app/Default.png373752044e7db741^d32d53044e7db741^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Default.png000000000080d041^632"CpResource capybara-touch/Default.png build/Debug-iphonesimulator/capybara-touch.app/Default.png    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/Default.png /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app36"1FECAC8F-9B3C-4866-939C-FB326005A14F-
+
+CCpResource capybara-touch/Default@2x.png build/Debug-iphonesimulator/capybara-touch.app/Default@2x.png
+s394087940.321897
+e394087940.326956
+r1
+xCpResource
+xcapybara-touch/Default@2x.png
+xbuild/Debug-iphonesimulator/capybara-touch.app/Default@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/Debug-iphonesimulator/capybara-touch.app/Default@2x.png249852044e7db741^e5b453044e7db741^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Default@2x.png000000000080d041^647"CpResource "capybara-touch/Default@2x.png" "build/Debug-iphonesimulator/capybara-touch.app/Default@2x.png"    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/Default@2x.png" /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app36"817A273D-47F4-44A3-AB92-CE3FA1190244-
+
+CCpResource capybara-touch/capybara.js build/Debug-iphonesimulator/capybara-touch.app/capybara.js
+s394087940.325812
+e394087940.328075
+r1
+xCpResource
+xcapybara-touch/capybara.js
+xbuild/Debug-iphonesimulator/capybara-touch.app/capybara.js
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy build/Debug-iphonesimulator/capybara-touch.app/capybara.jse57e53044e7db741^1c0954044e7db741^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara.js000000000080d041^632"CpResource capybara-touch/capybara.js build/Debug-iphonesimulator/capybara-touch.app/capybara.js    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara.js /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app36"650878DE-0342-4975-A2A8-015BBE50890C-
+
+CGenerateDSYMFile /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app.dSYM /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch
+s402252945.255370
+e402252945.296030
+r1
+xGenerateDSYMFile
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app.dSYM
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Generate /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app.dSYM130"GenerateDSYMFile build/Debug-iphonesimulator/capybara-touch.app.dSYM build/Debug-iphonesimulator/capybara-touch.app/capybara-toucha5874191e4f9b741^25c94b91e4f9b741^---0#0#1#-19%DVTDocumentLocation2@117"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app.dSYM/0000000000000000^1000"GenerateDSYMFile build/Debug-iphonesimulator/capybara-touch.app.dSYM build/Debug-iphonesimulator/capybara-touch.app/capybara-touch    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app.dSYM36"D16860B6-6EDE-49F1-A93A-7CB26A6BCE6C-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CLd /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch normal i386
+s402252945.081531
+e402252945.246529
+r1
+xLd
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch
+xnormal
+xi386
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/capybara-touch.LinkFileList
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/crt1.o
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/main.o
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTAppDelegate.o
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/CTViewController.o
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/TCPServer.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libdnsinfo.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Link /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch76"Ld build/Debug-iphonesimulator/capybara-touch.app/capybara-touch normal i386350a1591e4f9b741^0d1d3f91e4f9b741^---0#0#1#--1758"Ld build/Debug-iphonesimulator/capybara-touch.app/capybara-touch normal i386    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -filelist /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/capybara-touch.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.1 -framework UIKit -framework Foundation -framework CoreGraphics -Xlinker -dependency_info -Xlinker /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/Objects-normal/i386/capybara-touch_dependency_info.dat -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/capybara-touch36"903BCF45-9041-49F9-B786-6E92FFEA4B70-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CProcessInfoPlistFile /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist
+s402252944.364755
+e402252944.368720
+r1
+xProcessInfoPlistFile
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Process /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist119"ProcessInfoPlistFile build/Debug-iphonesimulator/capybara-touch.app/Info.plist capybara-touch/capybara-touch-Info.plist2c9f5d90e4f9b741^80645e90e4f9b741^---0#0#1#-19%DVTDocumentLocation2@105"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist0000000000000000^1081"ProcessInfoPlistFile build/Debug-iphonesimulator/capybara-touch.app/Info.plist capybara-touch/capybara-touch-Info.plist    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    builtin-infoPlistUtility /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist -genpkginfo /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist36"40B5667A-E53E-4391-8BC5-6ECBB0591C90-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CProcessInfoPlistFile /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist capybara-touch/capybara-touch-Info.plist
+s394087939.559619
+e394087939.563242
+r1
+xProcessInfoPlistFile
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist
+xcapybara-touch/capybara-touch-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection48"Process capybara-touch/capybara-touch-Info.plist22528f034e7db741^4cde90034e7db741^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Info.plist0000000000000000^729"ProcessInfoPlistFile build/Debug-iphonesimulator/capybara-touch.app/Info.plist capybara-touch/capybara-touch-Info.plist    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility capybara-touch/capybara-touch-Info.plist -genpkginfo /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app/Info.plist36"16FEC1F7-4276-427A-8F27-581C63C50031-
+
+CProcessPCH /Users/michaelwalker/Library/Developer/Xcode/DerivedData/capybara-touch-adowfoqvprmicxfxzyribvltlgjk/Index/PrecompiledHeaders/capybara-touch-Prefix-gnswsasusqtkvqdkvflljwekjlfj_ast/capybara-touch-Prefix.pch.pth capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /Users/michaelwalker/Library/Developer/Xcode/DerivedData/capybara-touch-adowfoqvprmicxfxzyribvltlgjk/Index/PrecompiledHeaders/capybara-touch-Prefix-gxpyvbaxanxzqqdudoxwlcyoernn_ast/capybara-touch-Prefix.pch.pth capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s402252944.380221
+e402252944.856131
+r1
+xProcessPCH
+x/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.pch
+xcapybara-touch/capybara-touch-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile capybara-touch/capybara-touch-Prefix.pch316"ProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerb8736190e4f9b741^282adb90e4f9b741^---0#0#1#-19%DVTDocumentLocation2@105"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch0000000000000000^4056"ProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -fno-objc-arc --serialize-diagnostics /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.d -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch -o /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-arbalzeuwruofyfeyanndycrnnrc/capybara-touch-Prefix.pch.pch36"DA3E544F-3D0D-4208-B570-A81C4F7574EA-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s402252944.378720
+e402252944.850696
+r1
+xProcessPCH
+x/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.pch
+xcapybara-touch/capybara-touch-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile capybara-touch/capybara-touch-Prefix.pch316"ProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler1b2f6190e4f9b741^19c6d990e4f9b741^---0#0#1#-19%DVTDocumentLocation2@105"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch0000000000000000^4042"ProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.pch capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/michaelwalker/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/michaelwalker/.rvm/bin:/usr/local/bin:/usr/bin:/usr/local/texlive/2011/bin/x86_64-darwin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator --serialize-diagnostics /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.d -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch -o /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.DeveloperTools/5.0-5A1412/Xcode/SharedPrecompiledHeaders/capybara-touch-Prefix-fkfsexshafmfsihjamzsbwpxaynn/capybara-touch-Prefix.pch.pch36"A4C4DB4F-A7E4-4461-A878-6A526AF814B1-
+b274D7682-21ED-4B60-A734-137789A573CA
+
+CProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-afvifctmxlgtbgfiehbrjpsuqreg/capybara-touch-Prefix.pch.pth capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394087939.572021
+e394087940.018556
+r1
+xProcessPCH
+x/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-afvifctmxlgtbgfiehbrjpsuqreg/capybara-touch-Prefix.pch.pth
+xcapybara-touch/capybara-touch-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile capybara-touch/capybara-touch-Prefix.pch789892034e7db741^a6d504044e7db741^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch0000000000000000^3759"ProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-afvifctmxlgtbgfiehbrjpsuqreg/capybara-touch-Prefix.pch.pth capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator -fno-objc-arc --serialize-diagnostics /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-afvifctmxlgtbgfiehbrjpsuqreg/capybara-touch-Prefix.pch.dia -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch -o /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-afvifctmxlgtbgfiehbrjpsuqreg/capybara-touch-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-afvifctmxlgtbgfiehbrjpsuqreg/capybara-touch-Prefix.pch.d36"949ED31E-6905-480F-AB14-5F6A953E5960-
+
+CProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-gdsxlgimvccfsgfcgvjaqdhesuar/capybara-touch-Prefix.pch.pth capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394087939.571190
+e394087939.953959
+r1
+xProcessPCH
+x/var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-gdsxlgimvccfsgfcgvjaqdhesuar/capybara-touch-Prefix.pch.pth
+xcapybara-touch/capybara-touch-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile capybara-touch/capybara-touch-Prefix.pch8d6192034e7db741^ce35f4034e7db741^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch0000000000000000^3745"ProcessPCH /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-gdsxlgimvccfsgfcgvjaqdhesuar/capybara-touch-Prefix.pch.pth capybara-touch/capybara-touch-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-generated-files.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-own-target-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-all-target-headers.hmap -iquote /Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/capybara-touch-project-headers.hmap -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources/i386 -I/Users/michaelwalker/Dropbox/Code/capybara-touch/build/capybara-touch.build/Debug-iphonesimulator/capybara-touch.build/DerivedSources -F/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator --serialize-diagnostics /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-gdsxlgimvccfsgfcgvjaqdhesuar/capybara-touch-Prefix.pch.dia -c /Users/michaelwalker/Dropbox/Code/capybara-touch/capybara-touch/capybara-touch-Prefix.pch -o /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-gdsxlgimvccfsgfcgvjaqdhesuar/capybara-touch-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/0_/9thtqpf552jc0k3d0wnglfth0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/capybara-touch-Prefix-gdsxlgimvccfsgfcgvjaqdhesuar/capybara-touch-Prefix.pch.d36"8B2B8D5E-2AC9-4AF1-B906-966F2938AA89-
+
+CTouch /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app
+s394115151.853815
+e394115151.860350
+r1
+xTouch
+x/Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Touch /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.appb6a1da4fb87db741^f73fdc4fb87db741^---0#0#0#--422"Touch build/Debug-iphonesimulator/capybara-touch.app    cd /Users/michaelwalker/Dropbox/Code/capybara-touch    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/michaelwalker/Dropbox/Code/capybara-touch/build/Debug-iphonesimulator/capybara-touch.app36"EBF670A4-794E-43BB-B0CB-F5C42A8B2E71-
+
