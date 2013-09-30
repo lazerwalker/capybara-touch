@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/Dropbox/Code/capybara-touch && rake run
+cd ~/Dropbox/Code/capybara-touch/ios && rake run

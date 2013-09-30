@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "TCPServer.h"
 
-@interface CTViewController : UIViewController<UIWebViewDelegate, TCPServerDelegate>
+@interface CTViewController : UIViewController<UIWebViewDelegate, NSStreamDelegate, TCPServerDelegate>
 
 @property (strong, nonatomic) UIWebView *webView;
 @property (strong, nonatomic) TCPServer *server;

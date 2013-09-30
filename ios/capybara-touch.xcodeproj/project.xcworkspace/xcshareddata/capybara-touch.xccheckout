@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A743479D-8B43-437F-BBE4-82A45DD6C16C</string>
+	<string>BA66D375-36BA-42CA-9FFF-D632633C00F3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>capybara-touch</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F9C2F87E-AFA6-4A85-A497-5A0A1DECB02B</key>
-		<string>ssh://bitbucket.org/michaelthewalker/capybara-touch.git</string>
+		<key>791C020B-BA24-420A-97E3-80224C2F7A7E</key>
+		<string>ssh://github.com/lazerwalker/capybara-touch.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>capybara-touch.xcodeproj/project.xcworkspace</string>
+	<string>ios/capybara-touch.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F9C2F87E-AFA6-4A85-A497-5A0A1DECB02B</key>
-		<string>../..</string>
+		<key>791C020B-BA24-420A-97E3-80224C2F7A7E</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://bitbucket.org/michaelthewalker/capybara-touch.git</string>
+	<string>ssh://github.com/lazerwalker/capybara-touch.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F9C2F87E-AFA6-4A85-A497-5A0A1DECB02B</string>
+	<string>791C020B-BA24-420A-97E3-80224C2F7A7E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F9C2F87E-AFA6-4A85-A497-5A0A1DECB02B</string>
+			<string>791C020B-BA24-420A-97E3-80224C2F7A7E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>capybara-touch</string>
 		</dict>

@@ -43,11 +43,33 @@ NSData *fileData = [NSData dataWithContentsOfFile:fileName];
 }
 
 #pragma mark - TCPServerDelegateProtocol
-- (void)TCPServer:(TCPServer *)server didReceiveConnectionFromAddress:(NSData *)addr inputStream:(NSInputStream *)istr outputStream:(NSOutputStream *)ostr {
+- (void)TCPServer:(TCPServer *)server didReceiveConnectionFromAddress:(NSData *)addr inputStream:(NSInputStream *)inputStream outputStream:(NSOutputStream *)outputStream {
+    NSLog(@"Received connection from address: %@", addr);
+
+    if ([inputStream streamStatus] == NSStreamStatusNotOpen) {
+        [inputStream open];
+    }
+    inputStream.delegate = self;
+
+    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+
 }
 
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self injectCapybara];
 }
+
+#pragma mark - NSStreamDelegate
+- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
+    if (streamEvent == NSStreamEventHasBytesAvailable && [(NSInputStream *)stream hasBytesAvailable]) {
+        uint8_t *buf;
+        NSInteger len = [(NSInputStream *)stream read:buf maxLength:1024];
+        if (len)        {
+            NSString *tmpStr = [[NSString alloc] initWithBytes:buf length:len encoding:NSUTF8StringEncoding];
+            NSLog(@"================> %@", tmpStr);
+        }
+    }
+}
+
 @end
