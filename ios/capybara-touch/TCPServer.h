@@ -3,11 +3,8 @@
 // Author: Surendar Chandra, FX Palo Alto Laboratory, Inc.
 
 #import <Foundation/Foundation.h>
-	// #import <CoreServices/CoreServices.h>
 
 @protocol TCPServerDelegate;
-
-NSString * const TCPServerErrorDomain;
 
 typedef enum {
     kTCPServerCouldNotBindToIPv4Address = 1,

@@ -20,6 +20,13 @@
 		A60FFD41177905D000A850CD /* capybara.js in Resources */ = {isa = PBXBuildFile; fileRef = A60FFD40177905D000A850CD /* capybara.js */; };
 		A60FFD4517790E7E00A850CD /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD4417790E7E00A850CD /* TCPServer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A6EDC1F117FB2DBD00841538 /* CTInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EDC1F017FB2DBD00841538 /* CTInterface.m */; };
+		A6FDB5F517FB598D00494C4B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDB5F417FB598D00494C4B /* SenTestingKit.framework */; };
+		A6FDB5F617FB598D00494C4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1E1779059A00A850CD /* CoreGraphics.framework */; };
+		A6FDB5F717FB598D00494C4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1A1779059A00A850CD /* UIKit.framework */; };
+		A6FDB5F817FB598D00494C4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1C1779059A00A850CD /* Foundation.framework */; };
+		A6FDB5FE17FB598D00494C4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6FDB5FC17FB598D00494C4B /* InfoPlist.strings */; };
+		A6FDB60317FB598E00494C4B /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDB60217FB598E00494C4B /* Cedar-iOS.framework */; };
+		A6FDB60A17FB5BF200494C4B /* CTInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6FDB60917FB5BF200494C4B /* CTInterfaceSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +50,14 @@
 		A60FFD4417790E7E00A850CD /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPServer.m; sourceTree = "<group>"; };
 		A6EDC1EF17FB2DBD00841538 /* CTInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTInterface.h; path = Domain/CTInterface.h; sourceTree = "<group>"; };
 		A6EDC1F017FB2DBD00841538 /* CTInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTInterface.m; path = Domain/CTInterface.m; sourceTree = "<group>"; };
+		A6FDB5F317FB598D00494C4B /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6FDB5F417FB598D00494C4B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A6FDB5FB17FB598D00494C4B /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
+		A6FDB5FD17FB598D00494C4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A6FDB60117FB598D00494C4B /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		A6FDB60217FB598E00494C4B /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cedar-iOS.framework"; path = "Frameworks/Cedar-iOS.framework"; sourceTree = "<group>"; };
+		A6FDB60417FB598E00494C4B /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		A6FDB60917FB5BF200494C4B /* CTInterfaceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CTInterfaceSpec.mm; path = Domain/CTInterfaceSpec.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +71,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6FDB5EF17FB598D00494C4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6FDB5F617FB598D00494C4B /* CoreGraphics.framework in Frameworks */,
+				A6FDB5F717FB598D00494C4B /* UIKit.framework in Frameworks */,
+				A6FDB60317FB598E00494C4B /* Cedar-iOS.framework in Frameworks */,
+				A6FDB5F517FB598D00494C4B /* SenTestingKit.framework in Frameworks */,
+				A6FDB5F817FB598D00494C4B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A60FFD0E1779059A00A850CD = {
 			isa = PBXGroup;
 			children = (
-				A60FFD201779059A00A850CD /* capybara-touch */,
+				A60FFD201779059A00A850CD /* App */,
+				A6FDB5F917FB598D00494C4B /* Specs */,
 				A60FFD191779059A00A850CD /* Frameworks */,
 				A60FFD181779059A00A850CD /* Products */,
 			);
@@ -72,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A60FFD171779059A00A850CD /* capybara-touch.app */,
+				A6FDB5F317FB598D00494C4B /* Specs.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,11 +111,12 @@
 				A60FFD1A1779059A00A850CD /* UIKit.framework */,
 				A60FFD1C1779059A00A850CD /* Foundation.framework */,
 				A60FFD1E1779059A00A850CD /* CoreGraphics.framework */,
+				A6FDB5F417FB598D00494C4B /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A60FFD201779059A00A850CD /* capybara-touch */ = {
+		A60FFD201779059A00A850CD /* App */ = {
 			isa = PBXGroup;
 			children = (
 				A6EDC1EE17FB2D8100841538 /* Domain */,
@@ -97,6 +127,7 @@
 				A60FFD331779059A00A850CD /* CTViewController.m */,
 				A60FFD211779059A00A850CD /* Supporting Files */,
 			);
+			name = App;
 			path = "capybara-touch";
 			sourceTree = "<group>";
 		};
@@ -133,6 +164,35 @@
 			name = Domain;
 			sourceTree = "<group>";
 		};
+		A6FDB5F917FB598D00494C4B /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				A6FDB60817FB5BE500494C4B /* Domain */,
+				A6FDB60117FB598D00494C4B /* Rakefile */,
+				A6FDB60217FB598E00494C4B /* Cedar-iOS.framework */,
+				A6FDB5FA17FB598D00494C4B /* Supporting Files */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		A6FDB5FA17FB598D00494C4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6FDB5FB17FB598D00494C4B /* Specs-Info.plist */,
+				A6FDB5FC17FB598D00494C4B /* InfoPlist.strings */,
+				A6FDB60417FB598E00494C4B /* Specs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6FDB60817FB5BE500494C4B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A6FDB60917FB5BF200494C4B /* CTInterfaceSpec.mm */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +212,24 @@
 			productName = "capybara-touch";
 			productReference = A60FFD171779059A00A850CD /* capybara-touch.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A6FDB5F217FB598D00494C4B /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6FDB60517FB598E00494C4B /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				A6FDB5EE17FB598D00494C4B /* Sources */,
+				A6FDB5EF17FB598D00494C4B /* Frameworks */,
+				A6FDB5F017FB598D00494C4B /* Resources */,
+				A6FDB5F117FB598D00494C4B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = A6FDB5F317FB598D00494C4B /* Specs.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,6 +254,7 @@
 			projectRoot = "";
 			targets = (
 				A60FFD161779059A00A850CD /* capybara-touch */,
+				A6FDB5F217FB598D00494C4B /* Specs */,
 			);
 		};
 /* End PBXProject section */
@@ -193,7 +272,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6FDB5F017FB598D00494C4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6FDB5FE17FB598D00494C4B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A6FDB5F117FB598D00494C4B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A60FFD131779059A00A850CD /* Sources */ = {
@@ -208,6 +311,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6FDB5EE17FB598D00494C4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6FDB60A17FB5BF200494C4B /* CTInterfaceSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -215,6 +326,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				A60FFD241779059A00A850CD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A6FDB5FC17FB598D00494C4B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6FDB5FD17FB598D00494C4B /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -308,6 +427,80 @@
 			};
 			name = Release;
 		};
+		A6FDB60617FB598E00494C4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/capybara-touch.app/capybara-touch";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios/Specs/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A6FDB60717FB598E00494C4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/capybara-touch.app/capybara-touch";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios/Specs/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +521,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A6FDB60517FB598E00494C4B /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6FDB60617FB598E00494C4B /* Debug */,
+				A6FDB60717FB598E00494C4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
