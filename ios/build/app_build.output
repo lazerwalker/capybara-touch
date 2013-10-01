@@ -1,9 +1,0 @@
-Build settings from command line:
-    SDKROOT = iphonesimulator7.0
-
-=== BUILD TARGET capybara-touch OF PROJECT capybara-touch WITH CONFIGURATION Debug ===
-
-Check dependencies
-
-** BUILD SUCCEEDED **
-
