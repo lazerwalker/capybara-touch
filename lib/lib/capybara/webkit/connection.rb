@@ -6,7 +6,7 @@ require 'open3'
 module Capybara::Webkit
   class Connection
     SERVER_PATH = "~/Dropbox/Code/capybara-touch/ios/run"
-    WEBKIT_SERVER_START_TIMEOUT = 30
+    WEBKIT_SERVER_START_TIMEOUT = 9999
 
     attr_reader :port
 

@@ -1,5 +1,5 @@
 PATH
-  remote: ~/Dropbox/Code/capybara-touch/capybara
+  remote: ~/Dropbox/Code/capybara-touch/lib
   specs:
     capybara-webkit (1.0.0)
       capybara (~> 2.0, >= 2.0.2)
