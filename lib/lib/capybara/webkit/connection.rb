@@ -89,7 +89,7 @@ module Capybara::Webkit
     end
 
     def connect
-      Timeout.timeout(5) do
+      Timeout.timeout(1000) do
         while @socket.nil?
           attempt_connect
         end
