@@ -1,9 +1,9 @@
 #import "CTViewController.h"
-#import "CTInterface.h"
+#import "CTCapybaraClient.h"
 
 @interface CTViewController ()
 
-@property (strong, nonatomic) CTInterface *interface;
+@property (strong, nonatomic) CTCapybaraClient *client;
 
 @end
 
@@ -11,7 +11,7 @@
 
 - (id)init {
     if (self = [super init]) {
-        self.interface = [[CTInterface alloc] init];
+        self.client = [[CTCapybaraClient alloc] init];
     }
     return self;
 }
@@ -24,7 +24,8 @@
     self.view = self.webView;
     self.webView.delegate = self;
 
-    [self.webView loadHTMLString:@"<html><head><title>HI MOM</title></head><body><h1>I'M A WEB PAGE</h1></body></html>" baseURL:[NSURL URLWithString:@"hi"]];
+    self.client.webView = self.webView;
+    [self.client connect];
 }
 
 - (void)injectCapybara {
@@ -32,7 +33,6 @@
 NSData *fileData = [NSData dataWithContentsOfFile:fileName];
     NSString *capybaraString = [[NSString alloc] initWithData:fileData encoding:NSStringEncodingConversionAllowLossy];
     [self.webView stringByEvaluatingJavaScriptFromString: capybaraString];
-    [self.interface startWithPort:9292 domain:@"localhost"];
 }
 
 - (NSString *)execute:(NSString *)js {

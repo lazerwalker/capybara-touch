@@ -19,6 +19,7 @@ describe(@"CTInterface", ^{
     beforeEach(^{
         interface = [[CTInterface alloc] init];
         interface.server = nice_fake_for([TCPServer class]);
+        interface.delegate = nice_fake_for(@protocol(CTCapybaraDelegate));
     });
 
     describe(@"startWithPort:domain:", ^{
@@ -68,39 +69,25 @@ describe(@"CTInterface", ^{
         });
     });
 
-    describe(@"stream:handleEvent:", ^{
-        beforeEach(^{
-            interface.inputStream = [[NSInputStream alloc] initWithData:[@"Visit\n1\n17\nhttp://google.com" dataUsingEncoding:NSUTF8StringEncoding]];
+    describe(@"handling input events", ^{
+        __block NSString *eventString;
+
+        subjectAction(^{
+            interface.inputStream = [[NSInputStream alloc] initWithData:[eventString dataUsingEncoding:NSUTF8StringEncoding]];
             [interface.inputStream open];
+
             interface.outputStream = nice_fake_for([NSOutputStream class]);
-        });
-        context(@"when the event is from the input stream", ^{
-            context(@"when there is new data", ^{
-                beforeEach(^{
-                    [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
-                });
 
-                fit(@"should HERP DERP", ^{
-                    YES should be_truthy;
-                });
-            });
-
-            xcontext(@"when there is not new data", ^{
-                beforeEach(^{
-                    [interface stream:interface.inputStream handleEvent:NSStreamEventEndEncountered];
-                });
-
-                it(@"should do nothing", ^{
-                });
-            });
+            [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
         });
 
-        xcontext(@"when the event is from the output stream", ^{
+        describe(@"visit event", ^{
             beforeEach(^{
-                [interface stream:interface.outputStream handleEvent:nil];
+                eventString = @"Visit\n1\n1024\nhttp://google.com";
             });
 
-            it(@"should do nothing", ^{
+            it(@"should make a Visit call", ^{
+                interface.delegate should have_received(@selector(visit:)).with(@"http://google.com");
             });
         });
 

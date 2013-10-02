@@ -10,6 +10,10 @@
 
 @implementation CTInterface
 
+- (NSDictionary *)commandMapping {
+    return @{@"Visit": @"visit:"};
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self.server = [[TCPServer alloc] init];
@@ -54,21 +58,36 @@
     if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
 
         // TODO: Either guarantee that the ruby side only ever sends things that are at most 1024 long, or else properly implement streaming.
-        uint8_t *inputBuffer[1024];
+        uint8_t inputBuffer[1024];
         NSInteger len = [self.inputStream read:inputBuffer maxLength:1024];
         if (len) {
             NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
 
             NSArray *arguments = [tmpStr componentsSeparatedByString:@"\n"];
 
-            // TODO: Error handling when there aren't exactly 4 arguments
-
-            NSString *verb = arguments[0];
+            NSString *command = arguments[0];
             NSString *argumentString = arguments[3];
 
-            // TODO: Split up argument string if argument count is > 1
-            NSLog(@"%@: %@", verb, argumentString);
+            NSLog(@"%@: %@", command, argumentString);
+
+            SEL commandSelector = [self delegateMethodFromCommand:command];
+
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [self.delegate performSelector:commandSelector withObject:argumentString];
+            #pragma clang diagnostic pop
         }
+    }
+}
+
+#pragma mark - Private
+- (SEL)delegateMethodFromCommand:(NSString *)command {
+    NSString *commandSelector = self.commandMapping[command];
+
+    if (commandSelector) {
+        return NSSelectorFromString(commandSelector);
+    } else {
+        return nil;
     }
 }
 @end
