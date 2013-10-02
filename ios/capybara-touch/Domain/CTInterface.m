@@ -43,20 +43,31 @@
 
     [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    
+
+    self.inputStream = inputStream;
+    self.outputStream = outputStream;
 }
 
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
-    NSLog(@"Received stream event! %d, %d", streamEvent, [(NSInputStream *)stream hasBytesAvailable]);
-    if (streamEvent == NSStreamEventHasBytesAvailable && [(NSInputStream *)stream hasBytesAvailable]) {
-        uint8_t *buf;
-        NSInteger len = [(NSInputStream *)stream read:buf maxLength:1024];
-        if (len)        {
-            NSString *tmpStr = [[NSString alloc] initWithBytes:buf length:len encoding:NSUTF8StringEncoding];
-            NSLog(@"================> %@", tmpStr);
-        } else {
-            NSLog(@"No len?");
+    NSLog(@"Received stream event");
+    if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
+
+        // TODO: Either guarantee that the ruby side only ever sends things that are at most 1024 long, or else properly implement streaming.
+        uint8_t *inputBuffer[1024];
+        NSInteger len = [self.inputStream read:inputBuffer maxLength:1024];
+        if (len) {
+            NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
+
+            NSArray *arguments = [tmpStr componentsSeparatedByString:@"\n"];
+
+            // TODO: Error handling when there aren't exactly 4 arguments
+
+            NSString *verb = arguments[0];
+            NSString *argumentString = arguments[3];
+
+            // TODO: Split up argument string if argument count is > 1
+            NSLog(@"%@: %@", verb, argumentString);
         }
     }
 }

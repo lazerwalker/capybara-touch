@@ -70,7 +70,8 @@ describe(@"CTInterface", ^{
 
     describe(@"stream:handleEvent:", ^{
         beforeEach(^{
-            interface.inputStream = [[NSInputStream alloc] initWithData:[@"Data" dataUsingEncoding:NSUTF8StringEncoding]];
+            interface.inputStream = [[NSInputStream alloc] initWithData:[@"Visit\n1\n17\nhttp://google.com" dataUsingEncoding:NSUTF8StringEncoding]];
+            [interface.inputStream open];
             interface.outputStream = nice_fake_for([NSOutputStream class]);
         });
         context(@"when the event is from the input stream", ^{

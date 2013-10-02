@@ -19,6 +19,8 @@
 		A60FFD341779059A00A850CD /* CTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD331779059A00A850CD /* CTViewController.m */; };
 		A60FFD41177905D000A850CD /* capybara.js in Resources */ = {isa = PBXBuildFile; fileRef = A60FFD40177905D000A850CD /* capybara.js */; };
 		A60FFD4517790E7E00A850CD /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD4417790E7E00A850CD /* TCPServer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A652695717FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */; };
+		A652695817FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */; };
 		A6EDC1F117FB2DBD00841538 /* CTInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EDC1F017FB2DBD00841538 /* CTInterface.m */; };
 		A6FDB5F517FB598D00494C4B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDB5F417FB598D00494C4B /* SenTestingKit.framework */; };
 		A6FDB5F617FB598D00494C4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1E1779059A00A850CD /* CoreGraphics.framework */; };
@@ -48,6 +50,8 @@
 		A60FFD40177905D000A850CD /* capybara.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = capybara.js; sourceTree = "<group>"; };
 		A60FFD4317790E7E00A850CD /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPServer.h; sourceTree = "<group>"; };
 		A60FFD4417790E7E00A850CD /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPServer.m; sourceTree = "<group>"; };
+		A652695517FB84DE0023FBC0 /* CTCapybaraClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCapybaraClient.h; sourceTree = "<group>"; };
+		A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCapybaraClient.m; sourceTree = "<group>"; };
 		A6EDC1EF17FB2DBD00841538 /* CTInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTInterface.h; path = Domain/CTInterface.h; sourceTree = "<group>"; };
 		A6EDC1F017FB2DBD00841538 /* CTInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTInterface.m; path = Domain/CTInterface.m; sourceTree = "<group>"; };
 		A6FDB5F317FB598D00494C4B /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,8 @@
 			children = (
 				A6EDC1EF17FB2DBD00841538 /* CTInterface.h */,
 				A6EDC1F017FB2DBD00841538 /* CTInterface.m */,
+				A652695517FB84DE0023FBC0 /* CTCapybaraClient.h */,
+				A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			files = (
 				A6EDC1F117FB2DBD00841538 /* CTInterface.m in Sources */,
 				A60FFD271779059A00A850CD /* main.m in Sources */,
+				A652695717FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */,
 				A60FFD2B1779059A00A850CD /* CTAppDelegate.m in Sources */,
 				A60FFD341779059A00A850CD /* CTViewController.m in Sources */,
 				A60FFD4517790E7E00A850CD /* TCPServer.m in Sources */,
@@ -315,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A652695817FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */,
 				A6FDB60A17FB5BF200494C4B /* CTInterfaceSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +537,7 @@
 				A6FDB60717FB598E00494C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
