@@ -118,7 +118,7 @@
 
 - (NSInteger)streamOutgoingMessage:(NSString *)message {
     NSLog(@"Sending message: '%@'", message);
-    const uint8_t *messageBuffer = (const uint8_t *)[@"ok\n" UTF8String];
+    const uint8_t *messageBuffer = (const uint8_t *)[[message stringByAppendingString:@"\n"] UTF8String];
     return [self.outputStream write:messageBuffer maxLength:strlen(messageBuffer)];
 }
 @end
