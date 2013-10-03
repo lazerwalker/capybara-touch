@@ -65,8 +65,6 @@
 
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
-    NSLog(@"Received stream event. Stream: %@, Event: %d ", stream, streamEvent);
-    NSLog(@"output has space? %d",[self.outputStream hasSpaceAvailable]);
     if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
         // TODO: Either guarantee that the ruby side only ever sends things that are at most 1024 long, or else properly implement streaming.
         uint8_t inputBuffer[1024];
@@ -74,13 +72,17 @@
         if (len) {
             NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
 
-            NSLog(@"Full string = %@", tmpStr);
+            NSLog(@"Full received message: '%@'", tmpStr);
             NSArray *arguments = [tmpStr componentsSeparatedByString:@"\n"];
 
             NSString *command = arguments[0];
-            NSString *argumentString = arguments[3];
 
-            NSLog(@"%@: %@", command, argumentString);
+            NSString *argumentString;
+            if (arguments.count > 3) {
+                argumentString = arguments[3];
+            }
+
+            NSLog(@"Interpreted command: '%@' arguments:'%@'", command, argumentString);
 
             SEL commandSelector = [self delegateMethodFromCommand:command];
 
@@ -93,8 +95,12 @@
         }
     } else if (stream == self.outputStream && streamEvent == NSStreamEventHasSpaceAvailable) {
         if (self.messageQueue.count > 0) {
-            NSLog(@"Result of stream: %d",[self streamOutgoingMessage:self.messageQueue[0]]);
-            [self.messageQueue removeObjectAtIndex:0];
+            NSInteger result = [self streamOutgoingMessage:self.messageQueue[0]];
+            if (result == -1) {
+                NSLog(@"Error sending outgoing message: '%@'", self.messageQueue[0]);
+            } else {
+                [self.messageQueue removeObjectAtIndex:0];
+            }
         }
     }
 }
