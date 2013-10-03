@@ -87,7 +87,9 @@
 
             #pragma clang diagnostic push
             #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [self.delegate performSelector:commandSelector withObject:argumentString];
+            if ([self.delegate respondsToSelector:commandSelector]) {
+                [self.delegate performSelector:commandSelector withObject:argumentString];
+            }
             #pragma clang diagnostic pop
         }
     } else if (stream == self.outputStream && streamEvent == NSStreamEventHasSpaceAvailable) {
