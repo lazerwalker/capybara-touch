@@ -28,6 +28,12 @@ describe(@"CTCapybaraClient", ^{
 
             request.URL.absoluteString should equal(@"http://google.com");
         });
+
+        it(@"should respond successfully", ^{
+            spy_on(client.interface);
+            [client visit:@"http://google.com"];
+            client.interface should have_received(@selector(sendSuccessMessage));
+        });
     });
 });
 

@@ -69,6 +69,16 @@ describe(@"CTInterface", ^{
         });
     });
 
+    describe(@"sendSuccessMessage", ^{
+        it(@"should send a success message via the output stream", ^{
+            interface.outputStream = nice_fake_for([NSOutputStream class]);
+
+            [interface sendSuccessMessage];
+
+            interface.outputStream should have_received(@selector(write:maxLength:));
+        });
+    });
+
     describe(@"handling input events", ^{
         __block NSString *eventString;
 

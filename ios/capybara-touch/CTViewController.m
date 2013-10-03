@@ -25,6 +25,7 @@
     self.webView.delegate = self;
 
     self.client.webView = self.webView;
+    NSLog(@"Connecting to client");
     [self.client connect];
 }
 

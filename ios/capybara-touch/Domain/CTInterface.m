@@ -6,6 +6,8 @@
 @property (strong, nonatomic) NSInputStream *inputStream;
 @property (strong, nonatomic) NSOutputStream *outputStream;
 
+@property (strong, nonatomic) NSMutableArray *messageQueue;
+
 @end
 
 @implementation CTInterface
@@ -17,6 +19,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.server = [[TCPServer alloc] init];
+        self.messageQueue = [NSMutableArray array];
     }
     return self;
 }
@@ -29,6 +32,15 @@
     self.server.delegate = self;
 
     NSLog(@"listening on port: %d", port);
+}
+
+- (void)sendSuccessMessage {
+    if([self.outputStream hasSpaceAvailable]) {
+        [self streamOutgoingMessage:@"ok"];
+    } else {
+        [self.messageQueue addObject:@"ok"];
+    }
+    [self.messageQueue addObject:@"ok"];
 }
 
 #pragma mark - TCPServerDelegateProtocol
@@ -54,15 +66,16 @@
 
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
-    NSLog(@"Received stream event");
+    NSLog(@"Received stream event. Stream: %@, Event: %d ", stream, streamEvent);
+    NSLog(@"output has space? %d",[self.outputStream hasSpaceAvailable]);
     if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
-
         // TODO: Either guarantee that the ruby side only ever sends things that are at most 1024 long, or else properly implement streaming.
         uint8_t inputBuffer[1024];
         NSInteger len = [self.inputStream read:inputBuffer maxLength:1024];
         if (len) {
             NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
 
+            NSLog(@"Full string = %@", tmpStr);
             NSArray *arguments = [tmpStr componentsSeparatedByString:@"\n"];
 
             NSString *command = arguments[0];
@@ -77,6 +90,11 @@
             [self.delegate performSelector:commandSelector withObject:argumentString];
             #pragma clang diagnostic pop
         }
+    } else if (stream == self.outputStream && streamEvent == NSStreamEventHasSpaceAvailable) {
+        if (self.messageQueue.count > 0) {
+            NSLog(@"Result of stream: %d",[self streamOutgoingMessage:self.messageQueue[0]]);
+            [self.messageQueue removeObjectAtIndex:0];
+        }
     }
 }
 
@@ -89,5 +107,11 @@
     } else {
         return nil;
     }
+}
+
+- (NSInteger)streamOutgoingMessage:(NSString *)message {
+    NSLog(@"Sending message: '%@'", message);
+    const uint8_t *messageBuffer = (const uint8_t *)[@"ok\n" UTF8String];
+    return [self.outputStream write:messageBuffer maxLength:strlen(messageBuffer)];
 }
 @end

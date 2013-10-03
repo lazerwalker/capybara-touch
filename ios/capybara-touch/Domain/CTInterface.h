@@ -6,5 +6,6 @@
 @property (strong, nonatomic) id<CTCapybaraDelegate>delegate;
 
 - (void)startWithPort:(NSInteger)port domain:(NSString *)domain;
+- (void)sendSuccessMessage;
 
 @end

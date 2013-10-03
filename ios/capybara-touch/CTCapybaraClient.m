@@ -27,11 +27,10 @@
 - (void)visit:(NSString *)urlString {
     NSLog(@"Loading URL: %@", urlString);
 
-    if (!urlString) { return; }
+    [self.interface sendSuccessMessage];
 
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
 }
-
 @end

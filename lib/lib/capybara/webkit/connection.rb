@@ -45,15 +45,15 @@ module Capybara::Webkit
     def start_server
       open_pipe
       # discover_port
-      forward_output_in_background_thread
+      # forward_output_in_background_thread
     end
 
     def open_pipe
-      _, @pipe_stdout, @pipe_stderr, wait_thr = Open3.popen3(SERVER_PATH)
+      # _, @pipe_stdout, @pipe_stderr, wait_thr = Open3.popen3(SERVER_PATH)
       @port = 9292
-      @pid = wait_thr[:pid]
-      p "Trying to open pipe. pid = #{@pid}"
-      register_shutdown_hook
+      # @pid = wait_thr[:pid]
+      # p "Trying to open pipe. pid = #{@pid}"
+      # register_shutdown_hook
     end
 
     def register_shutdown_hook
@@ -100,7 +100,7 @@ module Capybara::Webkit
       # p "Attempting connection..."
       @socket = @socket_class.open("localhost", @port)
       if defined?(Socket::TCP_NODELAY)
-        p "Settig socket options"
+        p "Setting socket options"
         @socket.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, true)
       end
       p "Connected on port #{@port}"
