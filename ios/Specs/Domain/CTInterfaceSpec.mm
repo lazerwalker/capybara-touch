@@ -70,12 +70,36 @@ describe(@"CTInterface", ^{
     });
 
     describe(@"sendSuccessMessage", ^{
-        it(@"should send a success message via the output stream", ^{
-            interface.outputStream = nice_fake_for([NSOutputStream class]);
+        context(@"when the output stream is ready to write", ^{
+            it(@"should send a success message via the output stream", ^{
+                interface.outputStream = nice_fake_for([NSOutputStream class]);
+                interface.outputStream stub_method(@selector(hasSpaceAvailable)).and_return(YES);
 
-            [interface sendSuccessMessage];
+                [interface sendSuccessMessage];
 
-            interface.outputStream should have_received(@selector(write:maxLength:));
+                interface.outputStream should have_received(@selector(write:maxLength:));
+            });
+        });
+
+        context(@"when the output stream is not ready", ^{
+            beforeEach(^{
+                interface.outputStream = nice_fake_for([NSOutputStream class]);
+                interface.outputStream stub_method(@selector(hasSpaceAvailable)).and_return(NO);
+
+                [interface sendSuccessMessage];
+            });
+
+            it(@"should not try to write", ^{
+                interface.outputStream should_not have_received(@selector(write:maxLength:));
+            });
+
+            context(@"when the output stream is then readied", ^{
+                it(@"should write", ^{
+                    [interface stream:interface.outputStream handleEvent:NSStreamEventHasSpaceAvailable];
+
+                    interface.outputStream should have_received(@selector(write:maxLength:));
+                });
+            });
         });
     });
 
