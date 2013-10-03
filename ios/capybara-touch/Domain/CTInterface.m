@@ -40,7 +40,6 @@
     } else {
         [self.messageQueue addObject:@"ok"];
     }
-    [self.messageQueue addObject:@"ok"];
 }
 
 #pragma mark - TCPServerDelegateProtocol
