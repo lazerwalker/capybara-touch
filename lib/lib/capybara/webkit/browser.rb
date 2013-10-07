@@ -206,10 +206,8 @@ module Capybara::Webkit
     private
 
     def check
-      p "Reading in from the socket connection"
       result = @connection.gets
       result.strip! if result
-      p "Received result! '#{result}'"
 
       if result.nil?
         raise NoResponseError, "No response received from the server."

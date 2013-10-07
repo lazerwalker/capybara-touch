@@ -25,6 +25,7 @@ module Capybara::Webkit
     end
 
     def puts(string)
+      p "PUTS: '#{string}'"
       @socket.puts string
     end
 
@@ -33,7 +34,9 @@ module Capybara::Webkit
     end
 
     def gets
-      @socket.gets
+      g = @socket.gets
+      p "GETS: #{g.strip}"
+      g
     end
 
     def read(length)
@@ -97,15 +100,12 @@ module Capybara::Webkit
     end
 
     def attempt_connect
-      # p "Attempting connection..."
       @socket = @socket_class.open("localhost", @port)
       if defined?(Socket::TCP_NODELAY)
-        p "Setting socket options"
         @socket.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, true)
       end
       p "Connected on port #{@port}"
     rescue Errno::ECONNREFUSED
-      # p "CONN REFUSED"
     end
   end
 end
