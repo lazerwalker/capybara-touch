@@ -88,20 +88,27 @@
             NSArray *arguments = [tmpStr componentsSeparatedByString:@"\n"];
 
             NSString *command = arguments[0];
+            NSInteger numberOfArguments = [arguments[1] intValue];
 
-            NSString *argumentString;
-            if (arguments.count > 3) {
-                argumentString = arguments[3];
+            id commandArgument; // Either an NSString or NSArray
+
+            if (numberOfArguments == 1) {
+                commandArgument = arguments[3];
+            } else if (numberOfArguments > 1) {
+                NSMutableArray *args = [NSMutableArray array];
+                for (int i = 0; i < numberOfArguments; i++) {
+                    [args addObject:arguments[3 + (i*2)]];
+                }
+                commandArgument = [args copy];
             }
 
-            NSLog(@"Interpreted command: '%@' arguments:'%@'", command, argumentString);
-
+            NSLog(@"Interpreted command: '%@' arguments:'%@'", command, commandArgument);
             SEL commandSelector = [self delegateMethodFromCommand:command];
 
             #pragma clang diagnostic push
             #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             if ([self.delegate respondsToSelector:commandSelector]) {
-                [self.delegate performSelector:commandSelector withObject:argumentString];
+                [self.delegate performSelector:commandSelector withObject:commandArgument];
             }
             #pragma clang diagnostic pop
         }
