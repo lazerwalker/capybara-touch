@@ -4,6 +4,7 @@
 
 - (void)visit:(NSString *)url;
 - (void)findXpath:(NSString *)xpath;
+- (void)reset;
 
 @end
 

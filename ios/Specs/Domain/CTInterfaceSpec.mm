@@ -139,6 +139,15 @@ describe(@"CTInterface", ^{
             });
         });
 
+        describe(@"reset", ^{
+            beforeEach(^{
+                eventString = @"Reset\n0\n";
+            });
+            
+            it(@"should make the appropriate call", ^{
+                interface.delegate should have_received(@selector(reset));
+            });
+        });
     });
 });
 

@@ -14,7 +14,8 @@
 
 - (NSDictionary *)commandMapping {
     return @{@"Visit": @"visit:",
-             @"FindXpath": @"findXpath:"};
+             @"FindXpath": @"findXpath:",
+             @"Reset": @"reset"};
 }
 
 - (instancetype)init {

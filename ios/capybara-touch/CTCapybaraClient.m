@@ -50,7 +50,10 @@
     NSLog(@"Capybara? '%@'", [self execute:@"Capybara;"]);
     NSLog(@"Result = %@", [self execute:jsString]);
 
+    [self.interface sendSuccessMessage:result];
+}
 
+- (void)reset {
     [self.interface sendSuccessMessage];
 }
 
