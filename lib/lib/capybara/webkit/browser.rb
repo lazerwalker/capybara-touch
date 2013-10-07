@@ -147,7 +147,7 @@ module Capybara::Webkit
       @connection.puts args.size
       args.each do |arg|
         @connection.puts arg.to_s.bytesize
-        @connection.print arg.to_s
+        @connection.puts arg.to_s
       end
       check
       read_response
@@ -221,14 +221,15 @@ module Capybara::Webkit
     end
 
     def read_response
-      # response_length = @connection.read(1)
-      # if response_length > 0
-      #   response = @connection.read(response_length)
-      #   response.force_encoding("UTF-8") if response.respond_to?(:force_encoding)
-      #   response
-      # else
-      #   ""
-      # end
+      response_length = @connection.gets.to_i
+      if response_length > 0
+        response = @connection.gets
+        response.strip! if response
+        response.force_encoding("UTF-8") if response.respond_to?(:force_encoding)
+        response
+      else
+        ""
+      end
     end
 
     def default_proxy_options

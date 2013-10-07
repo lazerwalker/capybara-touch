@@ -45,9 +45,9 @@
 - (void)sendSuccessMessage:(NSString *)message {
     NSString *successMessage = @"ok\n";
     if (message) {
-        successMessage = [NSString stringWithFormat:@"%@%d\n%@", successMessage, message.length, message];
+        successMessage = [NSString stringWithFormat:@"%@%d\n%@\n", successMessage, message.length, message];
     } else {
-        successMessage = [successMessage stringByAppendingString:@"0"];
+        successMessage = [successMessage stringByAppendingString:@"0\n"];
     }
 
     if([self.outputStream hasSpaceAvailable]) {
@@ -138,8 +138,8 @@
 }
 
 - (NSInteger)streamOutgoingMessage:(NSString *)message {
-    NSLog(@"Sending message: '%@'", message);
-    const uint8_t *messageBuffer = (const uint8_t *)[[message stringByAppendingString:@"\n"] UTF8String];
+    NSLog(@"==========> Sending message: '%@'", message);
+    const uint8_t *messageBuffer = (const uint8_t *)[message UTF8String];
     return [self.outputStream write:messageBuffer maxLength:strlen(messageBuffer)];
 }
 @end
