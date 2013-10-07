@@ -37,10 +37,21 @@
 }
 
 - (void)sendSuccessMessage {
-    if([self.outputStream hasSpaceAvailable]) {
-        [self streamOutgoingMessage:@"ok"];
+    [self sendSuccessMessage:nil];
+}
+
+- (void)sendSuccessMessage:(NSString *)message {
+    NSString *successMessage = @"ok\n";
+    if (message) {
+        successMessage = [NSString stringWithFormat:@"%@%d\n%@", successMessage, message.length, message];
     } else {
-        [self.messageQueue addObject:@"ok"];
+        successMessage = [successMessage stringByAppendingString:@"0"];
+    }
+
+    if([self.outputStream hasSpaceAvailable]) {
+        [self streamOutgoingMessage:successMessage];
+    } else {
+        [self.messageQueue addObject:successMessage];
     }
 }
 
@@ -70,7 +81,7 @@
     if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
         // TODO: Either guarantee that the ruby side only ever sends things that are at most 1024 long, or else properly implement streaming.
         uint8_t inputBuffer[1024];
-        NSInteger len = [self.inputStream read:inputBuffer maxLength:1024];
+        NSInteger len = [self.inputStream read:inputBuffer maxLength:2048];
         if (len) {
             NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
 

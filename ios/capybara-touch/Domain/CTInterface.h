@@ -7,5 +7,6 @@
 
 - (void)startWithPort:(NSInteger)port domain:(NSString *)domain;
 - (void)sendSuccessMessage;
+- (void)sendSuccessMessage:(NSString *)message;
 
 @end

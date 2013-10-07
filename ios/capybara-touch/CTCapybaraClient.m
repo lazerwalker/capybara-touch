@@ -5,6 +5,7 @@
 
 @property (strong, nonatomic) CTInterface *interface;
 @property (copy, nonatomic) void (^webViewLoadCompletionBlock)();
+@property (strong, nonatomic) NSString *capybaraJS;
 
 @end
 
@@ -24,6 +25,8 @@
 }
 
 - (void)didFinishLoadingWebView {
+    [self injectCapybaraIntoCurrentPage];
+
     if (self.webViewLoadCompletionBlock) {
         self.webViewLoadCompletionBlock();
         self.webViewLoadCompletionBlock = nil;
@@ -47,8 +50,8 @@
 
 - (void)findXpath:(NSString *)xpath {
     NSString *jsString = [NSString stringWithFormat:@"Capybara.findXpath(\"%@\");", xpath];
-    NSLog(@"Capybara? '%@'", [self execute:@"Capybara;"]);
-    NSLog(@"Result = %@", [self execute:jsString]);
+    NSString *result = [NSString stringWithFormat:@"[\"%@\"]", [self execute:jsString]];
+    NSLog(@"Result = %@", result);
 
     [self.interface sendSuccessMessage:result];
 }
@@ -60,6 +63,16 @@
 #pragma mark - Private
 - (NSString *)execute:(NSString *)js {
     return [self.webView stringByEvaluatingJavaScriptFromString:js];
+}
+
+- (void)injectCapybaraIntoCurrentPage {
+    if (!self.capybaraJS) {
+        NSString *fileName = [[NSBundle mainBundle] pathForResource:@"capybara" ofType:@"js"];
+        NSData *fileData = [NSData dataWithContentsOfFile:fileName];
+        self.capybaraJS = [[NSString alloc] initWithData:fileData encoding:NSStringEncodingConversionAllowLossy];
+    }
+
+    [self execute:self.capybaraJS];
 }
 
 @end
