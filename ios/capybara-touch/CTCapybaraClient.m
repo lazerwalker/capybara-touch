@@ -50,7 +50,7 @@
 
 - (void)findXpath:(NSString *)xpath {
     NSString *jsString = [NSString stringWithFormat:@"Capybara.findXpath(\"%@\");", xpath];
-    NSString *result = [NSString stringWithFormat:@"[\"%@\"]", [self execute:jsString]];
+    NSString *result = [self execute:jsString];
     NSLog(@"Result = %@", result);
 
     [self.interface sendSuccessMessage:result];

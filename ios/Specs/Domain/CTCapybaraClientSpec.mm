@@ -47,7 +47,7 @@ describe(@"CTCapybaraClient", ^{
             client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"1");
             spy_on(client.interface);
             [client findXpath:@"foo"];
-            client.interface should have_received(@selector(sendSuccessMessage:)).with(@"[\"1\"]");
+            client.interface should have_received(@selector(sendSuccessMessage:)).with(@"1");
         });
     });
 });
