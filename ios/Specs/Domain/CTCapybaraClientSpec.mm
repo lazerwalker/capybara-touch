@@ -42,10 +42,12 @@ describe(@"CTCapybaraClient", ^{
             client.webView should have_received(@selector(stringByEvaluatingJavaScriptFromString:)).with(@"Capybara.findXpath(\"foo\");");
         });
 
-        xit(@"should respond successfully", ^{
+        it(@"should respond successfully", ^{
+            spy_on(client.webView);
+            client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"1");
             spy_on(client.interface);
-            [client visit:@"http://google.com"];
-            client.interface should have_received(@selector(sendSuccessMessage));
+            [client findXpath:@"foo"];
+            client.interface should have_received(@selector(sendSuccessMessage:)).with(@"[\"1\"]");
         });
     });
 });
