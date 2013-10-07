@@ -1,5 +1,6 @@
 #import "CTCapybaraClient.h"
 #import "CTInterface.h"
+#import "NSArray+Enumerable.h"
 
 @interface CTCapybaraClient ()
 
@@ -60,6 +61,21 @@
     [self.interface sendSuccessMessage];
 }
 
+- (void)javascriptCommand:(NSArray *)arguments {
+    NSString *command = arguments[0];
+
+    NSArray *args = [arguments subarrayWithRange:NSMakeRange(1, arguments.count - 1)];
+    args = [args map:^id(NSString *argument, NSUInteger idx) {
+        return [self stripJsonArrayFromNodeIndex:argument];
+    }];
+
+    NSString *js = [NSString stringWithFormat:@"Capybara.%@(%@);", command, [args componentsJoinedByString:@", "]];
+    NSString *result = [self execute:js];
+    NSLog(@"JS Result: %@", result);
+
+    [self.interface sendSuccessMessage:result];
+}
+
 #pragma mark - Private
 - (NSString *)execute:(NSString *)js {
     return [self.webView stringByEvaluatingJavaScriptFromString:js];
@@ -73,6 +89,18 @@
     }
 
     [self execute:self.capybaraJS];
+}
+
+// Turns '["5"]' into "5"
+- (NSString *)stripJsonArrayFromNodeIndex:(NSString *)string {
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[\\\"(\\d+)\\\"\\]" options:0 error:&error];
+    NSTextCheckingResult *result = [regex firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
+    if (result && result.numberOfRanges == 2) {
+        return [string substringWithRange:[result rangeAtIndex:1]];
+    } else {
+        return string;
+    }
 }
 
 @end

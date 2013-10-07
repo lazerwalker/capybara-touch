@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60AA62D18032462000A59C4 /* NSArray+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */; };
+		A60AA62E18032462000A59C4 /* NSArray+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */; };
 		A60FFD1B1779059A00A850CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1A1779059A00A850CD /* UIKit.framework */; };
 		A60FFD1D1779059A00A850CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1C1779059A00A850CD /* Foundation.framework */; };
 		A60FFD1F1779059A00A850CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1E1779059A00A850CD /* CoreGraphics.framework */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A60AA62B18032462000A59C4 /* NSArray+Enumerable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Enumerable.h"; path = "Extensions/NSArray+Enumerable.h"; sourceTree = "<group>"; };
+		A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Enumerable.m"; path = "Extensions/NSArray+Enumerable.m"; sourceTree = "<group>"; };
 		A60FFD171779059A00A850CD /* capybara-touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "capybara-touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60FFD1A1779059A00A850CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A60FFD1C1779059A00A850CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A60AA62A18032452000A59C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A60AA62B18032462000A59C4 /* NSArray+Enumerable.h */,
+				A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		A60FFD0E1779059A00A850CD = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,7 @@
 		A60FFD201779059A00A850CD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A60AA62A18032452000A59C4 /* Extensions */,
 				A6EDC1EE17FB2D8100841538 /* Domain */,
 				A60FFD4217790E6F00A850CD /* External */,
 				A60FFD291779059A00A850CD /* CTAppDelegate.h */,
@@ -334,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EDC1F117FB2DBD00841538 /* CTInterface.m in Sources */,
+				A60AA62D18032462000A59C4 /* NSArray+Enumerable.m in Sources */,
 				A60FFD271779059A00A850CD /* main.m in Sources */,
 				A652695717FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */,
 				A60FFD2B1779059A00A850CD /* CTAppDelegate.m in Sources */,
@@ -350,6 +365,7 @@
 				A652695817FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */,
 				A652695A17FB850B0023FBC0 /* CTCapybaraClientSpec.mm in Sources */,
 				A6FDB60A17FB5BF200494C4B /* CTInterfaceSpec.mm in Sources */,
+				A60AA62E18032462000A59C4 /* NSArray+Enumerable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

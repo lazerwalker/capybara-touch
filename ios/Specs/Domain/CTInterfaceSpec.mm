@@ -148,6 +148,16 @@ describe(@"CTInterface", ^{
                 interface.delegate should have_received(@selector(reset));
             });
         });
+
+        describe(@"node", ^{
+            beforeEach(^{
+                eventString = @"Node\n2\n10\nisAttached\n5\n[\"1\"]";
+            });
+
+            it(@"should make the appropriate call", ^{
+                interface.delegate should have_received(@selector(javascriptCommand:)).with(@[@"isAttached", @"[\"1\"]"]);
+            });
+        });
     });
 });
 

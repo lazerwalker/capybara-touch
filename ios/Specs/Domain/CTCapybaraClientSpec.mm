@@ -50,6 +50,22 @@ describe(@"CTCapybaraClient", ^{
             client.interface should have_received(@selector(sendSuccessMessage:)).with(@"1");
         });
     });
+
+    describe(@"node", ^{
+        it(@"should send the JS command on to the web view", ^{
+            [client javascriptCommand:@[@"isAttached", @"[\"1\"]"]];
+
+             client.webView should have_received(@selector(stringByEvaluatingJavaScriptFromString:)).with(@"Capybara.isAttached(1);");
+        });
+
+        it(@"should respond successfully", ^{
+            spy_on(client.webView);
+            client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"true");
+            spy_on(client.interface);
+            [client javascriptCommand:@[@"isAttached", @"[\"1\"]"]];
+            client.interface should have_received(@selector(sendSuccessMessage:)).with(@"true");
+        });
+    });
 });
 
 SPEC_END
