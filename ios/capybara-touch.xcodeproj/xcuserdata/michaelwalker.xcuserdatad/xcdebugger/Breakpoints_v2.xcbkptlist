@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "capybara-touch/CTViewController.m"
-            timestampString = "402442990.404382"
+            filePath = "capybara-touch/CTCapybaraClient.m"
+            timestampString = "402524865.937432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-webViewDidFinishLoad:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-findXpath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

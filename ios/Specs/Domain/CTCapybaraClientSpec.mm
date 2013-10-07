@@ -35,6 +35,19 @@ describe(@"CTCapybaraClient", ^{
             client.interface should have_received(@selector(sendSuccessMessage));
         });
     });
+
+    describe(@"findXpath", ^{
+        it(@"should tell the web view to grab an xpath", ^{
+            [client findXpath:@"foo"];
+            client.webView should have_received(@selector(stringByEvaluatingJavaScriptFromString:)).with(@"Capybara.findXpath(\"foo\");");
+        });
+
+        xit(@"should respond successfully", ^{
+            spy_on(client.interface);
+            [client visit:@"http://google.com"];
+            client.interface should have_received(@selector(sendSuccessMessage));
+        });
+    });
 });
 
 SPEC_END

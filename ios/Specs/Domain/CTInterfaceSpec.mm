@@ -115,13 +115,27 @@ describe(@"CTInterface", ^{
             [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
         });
 
-        describe(@"visit event", ^{
+        describe(@"visit", ^{
             beforeEach(^{
                 eventString = @"Visit\n1\n1024\nhttp://google.com";
             });
 
-            it(@"should make a Visit call", ^{
+            it(@"should make the appropriate call", ^{
                 interface.delegate should have_received(@selector(visit:)).with(@"http://google.com");
+            });
+        });
+
+        describe(@"find xpath ", ^{
+            __block NSString *xpath;
+
+            beforeEach(^{
+                xpath = @".//*[self::input | self::textarea][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'radio' or ./@type = 'checkbox' or ./@type = 'hidden' or ./@type = 'file')][(((./@id = 'gbqfq' or ./@name = 'gbqfq') or ./@placeholder = 'gbqfq') or ./@id = //label[normalize-space(string(.)) = 'gbqfq']/@for)] | .//label[normalize-space(string(.)) = 'gbqfq']//.//*[self::input | self::textarea][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'radio' or ./@type = 'checkbox' or ./@type = 'hidden' or ./@type = 'file')]'";
+
+                eventString = [@"FindXpath\n1\n519\n" stringByAppendingString:xpath];
+            });
+
+            it(@"should make the appropriate call", ^{
+                interface.delegate should have_received(@selector(findXpath:)).with(xpath);
             });
         });
 

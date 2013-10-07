@@ -13,7 +13,8 @@
 @implementation CTInterface
 
 - (NSDictionary *)commandMapping {
-    return @{@"Visit": @"visit:"};
+    return @{@"Visit": @"visit:",
+             @"FindXpath": @"findXpath:"};
 }
 
 - (instancetype)init {

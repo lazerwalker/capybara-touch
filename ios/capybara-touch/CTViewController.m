@@ -29,20 +29,10 @@
     [self.client connect];
 }
 
-- (void)injectCapybara {
-    NSString *fileName = [[NSBundle mainBundle] pathForResource:@"capybara" ofType:@"js"];
-NSData *fileData = [NSData dataWithContentsOfFile:fileName];
-    NSString *capybaraString = [[NSString alloc] initWithData:fileData encoding:NSStringEncodingConversionAllowLossy];
-    [self.webView stringByEvaluatingJavaScriptFromString: capybaraString];
-}
-
-- (NSString *)execute:(NSString *)js {
-    return [self.webView stringByEvaluatingJavaScriptFromString:js];
-}
-
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self injectCapybara];
+    [self.client didFinishLoadingWebView];
 }
+
 
 @end
