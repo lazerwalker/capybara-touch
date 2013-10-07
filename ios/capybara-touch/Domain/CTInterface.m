@@ -79,9 +79,8 @@
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
     if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
-        // TODO: Either guarantee that the ruby side only ever sends things that are at most 1024 long, or else properly implement streaming.
-        uint8_t inputBuffer[1024];
-        NSInteger len = [self.inputStream read:inputBuffer maxLength:2048];
+        uint8_t inputBuffer[4096];
+        NSInteger len = [self.inputStream read:inputBuffer maxLength:4096];
         if (len) {
             NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
 
