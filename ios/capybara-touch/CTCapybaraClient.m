@@ -71,8 +71,11 @@
 
     NSString *js = [NSString stringWithFormat:@"Capybara.%@(%@);", command, [args componentsJoinedByString:@", "]];
     NSString *result = [self execute:js];
-    NSLog(@"JS Result: %@", result);
+    if ([result isEqualToString:@""]) {
+        result = @"false";
+    }
 
+    NSLog(@"JS Result: %@", result);
     [self.interface sendSuccessMessage:result];
 }
 

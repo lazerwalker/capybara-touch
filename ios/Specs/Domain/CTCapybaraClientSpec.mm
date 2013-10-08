@@ -58,13 +58,26 @@ describe(@"CTCapybaraClient", ^{
              client.webView should have_received(@selector(stringByEvaluatingJavaScriptFromString:)).with(@"Capybara.isAttached(1);");
         });
 
-        it(@"should respond successfully", ^{
-            spy_on(client.webView);
-            client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"true");
-            spy_on(client.interface);
-            [client javascriptCommand:@[@"isAttached", @"[\"1\"]"]];
-            client.interface should have_received(@selector(sendSuccessMessage:)).with(@"true");
+        context(@"when the request is true", ^{
+            it(@"should respond successfully", ^{
+                spy_on(client.webView);
+                client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"true");
+                spy_on(client.interface);
+                [client javascriptCommand:@[@"isAttached", @"[\"1\"]"]];
+                client.interface should have_received(@selector(sendSuccessMessage:)).with(@"true");
+            });
         });
+
+        context(@"when the request is false", ^{
+            it(@"should respond successfully", ^{
+                spy_on(client.webView);
+                client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"");
+                spy_on(client.interface);
+                [client javascriptCommand:@[@"isAttached", @"[\"1\"]"]];
+                client.interface should have_received(@selector(sendSuccessMessage:)).with(@"false");
+            });
+        });
+
     });
 });
 
