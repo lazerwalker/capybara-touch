@@ -104,58 +104,81 @@ describe(@"CTInterface", ^{
     });
 
     describe(@"handling input events", ^{
-        __block NSString *eventString;
+        context(@"when the message is complete", ^{
+            __block NSString *eventString;
 
-        subjectAction(^{
-            interface.inputStream = [[NSInputStream alloc] initWithData:[eventString dataUsingEncoding:NSUTF8StringEncoding]];
-            [interface.inputStream open];
+            subjectAction(^{
+                interface.inputStream = [[NSInputStream alloc] initWithData:[eventString dataUsingEncoding:NSUTF8StringEncoding]];
+                [interface.inputStream open];
 
-            interface.outputStream = nice_fake_for([NSOutputStream class]);
+                interface.outputStream = nice_fake_for([NSOutputStream class]);
 
-            [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
-        });
-
-        describe(@"visit", ^{
-            beforeEach(^{
-                eventString = @"Visit\n1\n1024\nhttp://google.com";
+                [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
             });
 
-            it(@"should make the appropriate call", ^{
+            describe(@"visit", ^{
+                beforeEach(^{
+                    eventString = @"Visit\n1\n17\nhttp://google.com";
+                });
+
+                it(@"should make the appropriate call", ^{
+                    interface.delegate should have_received(@selector(visit:)).with(@"http://google.com");
+                });
+            });
+
+            describe(@"find xpath ", ^{
+                __block NSString *xpath;
+
+                beforeEach(^{
+                    xpath = @".//*[self::input | self::textarea][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'radio' or ./@type = 'checkbox' or ./@type = 'hidden' or ./@type = 'file')][(((./@id = 'gbqfq' or ./@name = 'gbqfq') or ./@placeholder = 'gbqfq') or ./@id = //label[normalize-space(string(.)) = 'gbqfq']/@for)] | .//label[normalize-space(string(.)) = 'gbqfq']//.//*[self::input | self::textarea][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'radio' or ./@type = 'checkbox' or ./@type = 'hidden' or ./@type = 'file')]'";
+
+                    eventString = [@"FindXpath\n1\n519\n" stringByAppendingString:xpath];
+                });
+
+                it(@"should make the appropriate call", ^{
+                    interface.delegate should have_received(@selector(findXpath:)).with(xpath);
+                });
+            });
+
+            describe(@"reset", ^{
+                beforeEach(^{
+                    eventString = @"Reset\n0\n";
+                });
+
+                it(@"should make the appropriate call", ^{
+                    interface.delegate should have_received(@selector(reset));
+                });
+            });
+
+            describe(@"node", ^{
+                beforeEach(^{
+                    eventString = @"Node\n2\n10\nisAttached\n5\n[\"1\"]";
+                });
+                
+                it(@"should make the appropriate call", ^{
+                    interface.delegate should have_received(@selector(javascriptCommand:)).with(@[@"isAttached", @"[\"1\"]"]);
+                });
+            });
+        });
+
+        context(@"when the message is not complete but is later completed", ^{
+            it(@"should make a valid call", ^{
+                NSString *firstHalf = @"Visit\n1\n";
+                interface.inputStream = [[NSInputStream alloc] initWithData:[firstHalf dataUsingEncoding:NSUTF8StringEncoding]];
+                [interface.inputStream open];
+                interface.outputStream = nice_fake_for([NSOutputStream class]);
+
+                [(id<CedarDouble>)interface.delegate reset_sent_messages];
+
+                [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
+                [(id<CedarDouble>)interface.delegate sent_messages] should be_empty;
+
+                NSString *secondHalf = @"17\nhttp://google.com";
+                interface.inputStream = [[NSInputStream alloc] initWithData:[secondHalf dataUsingEncoding:NSUTF8StringEncoding]];
+                [interface.inputStream open];
+
+                [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
                 interface.delegate should have_received(@selector(visit:)).with(@"http://google.com");
-            });
-        });
-
-        describe(@"find xpath ", ^{
-            __block NSString *xpath;
-
-            beforeEach(^{
-                xpath = @".//*[self::input | self::textarea][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'radio' or ./@type = 'checkbox' or ./@type = 'hidden' or ./@type = 'file')][(((./@id = 'gbqfq' or ./@name = 'gbqfq') or ./@placeholder = 'gbqfq') or ./@id = //label[normalize-space(string(.)) = 'gbqfq']/@for)] | .//label[normalize-space(string(.)) = 'gbqfq']//.//*[self::input | self::textarea][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'radio' or ./@type = 'checkbox' or ./@type = 'hidden' or ./@type = 'file')]'";
-
-                eventString = [@"FindXpath\n1\n519\n" stringByAppendingString:xpath];
-            });
-
-            it(@"should make the appropriate call", ^{
-                interface.delegate should have_received(@selector(findXpath:)).with(xpath);
-            });
-        });
-
-        describe(@"reset", ^{
-            beforeEach(^{
-                eventString = @"Reset\n0\n";
-            });
-            
-            it(@"should make the appropriate call", ^{
-                interface.delegate should have_received(@selector(reset));
-            });
-        });
-
-        describe(@"node", ^{
-            beforeEach(^{
-                eventString = @"Node\n2\n10\nisAttached\n5\n[\"1\"]";
-            });
-
-            it(@"should make the appropriate call", ^{
-                interface.delegate should have_received(@selector(javascriptCommand:)).with(@[@"isAttached", @"[\"1\"]"]);
             });
         });
     });

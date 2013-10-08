@@ -8,6 +8,7 @@
 
 @property (strong, nonatomic) NSMutableArray *messageQueue;
 
+@property (strong, nonatomic) NSString *incompleteIncomingMessage;
 @end
 
 @implementation CTInterface
@@ -81,19 +82,42 @@
 #pragma mark - NSStreamDelegate
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
     if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
-        uint8_t inputBuffer[4096];
-        NSInteger len = [self.inputStream read:inputBuffer maxLength:4096];
-        if (len) {
-            NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
+        NSMutableString *inputString;
+        if (self.incompleteIncomingMessage) {
+            inputString = [self.incompleteIncomingMessage mutableCopy];
+        } else {
+            inputString = [[NSMutableString alloc] init];
+        }
 
-            NSLog(@"Full received message: '%@'", tmpStr);
-            NSArray *arguments = [tmpStr componentsSeparatedByString:@"\n"];
+        while ([self.inputStream hasBytesAvailable]) {
+            uint8_t inputBuffer[512];
+            NSInteger len = [self.inputStream read:inputBuffer maxLength:512];
+            if (len) {
+                NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
+                if (tmpStr) {
+                    [inputString appendString:tmpStr];
+                }
+            };
+        }
+
+        NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
+
+        NSLog(@"THE MESSAGE SO FAR: '%@'", inputString);
+        if (arguments.count < 2 ||
+            [arguments[1] isEqualToString:@""] ||
+            arguments.count < 2 + ([arguments[1] intValue] * 2) ||
+            inputString.length < [arguments[0] length] + [arguments[1] length] + [arguments[2] length] + [arguments[2] intValue]) {
+            self.incompleteIncomingMessage = inputString;
+            return;
+        } else {
+            NSLog(@"Full received message: '%@'", inputString);
 
             NSString *command = arguments[0];
             NSInteger numberOfArguments = [arguments[1] intValue];
 
-            id commandArgument; // Either an NSString or NSArray
-
+            // If there's only 1 argument, commandArgument should be a NSString containing it.
+            // Otherwise, it should be an NSArray.
+            id commandArgument;
             if (numberOfArguments == 1) {
                 commandArgument = arguments[3];
             } else if (numberOfArguments > 1) {
@@ -113,6 +137,8 @@
                 [self.delegate performSelector:commandSelector withObject:commandArgument];
             }
             #pragma clang diagnostic pop
+
+            self.incompleteIncomingMessage = nil;
         }
     } else if (stream == self.outputStream && streamEvent == NSStreamEventHasSpaceAvailable) {
         if (self.messageQueue.count > 0) {
