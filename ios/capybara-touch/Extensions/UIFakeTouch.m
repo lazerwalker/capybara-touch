@@ -15,6 +15,11 @@
     return self;
 }
 
+// TODO: This problem SHOULD have been solved by UIView convertPoint:inView:, but it wasn't working.
+- (void)setPoint:(CGPoint)point {
+    _point = CGPointMake(point.x, point.y + 20);
+}
+
 - (void)sendTap {
     [self sendTouchStart];
     [self sendTouchEnd];
@@ -29,8 +34,6 @@
 }
 
 - (void)sendEventForPhase:(UITouchPhase)phase {
-    CGPoint windowLocation = [self.view.window convertPoint:self.point fromView:self.view];
-
     uint8_t touchEvent[sizeof(GSEventRecord) + sizeof(GSHandInfo) + sizeof(GSPathInfo)];
     struct GSTouchEvent {
         GSEventRecord record;
@@ -40,7 +43,7 @@
 
     event->record.type = kGSEventHand;
     event->record.subtype = kGSEventSubTypeUnknown;
-    event->record.location = windowLocation;
+    event->record.location = self.point;
     event->record.timestamp = GSCurrentEventTimestamp();
     event->record.infoSize = sizeof(GSHandInfo) + sizeof(GSPathInfo);
     event->handInfo.type = kGSHandInfoTypeTouchDown;

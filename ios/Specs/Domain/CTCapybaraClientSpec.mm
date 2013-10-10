@@ -78,6 +78,15 @@ describe(@"CTCapybaraClient", ^{
             });
         });
 
+        context(@"when the request is wait", ^{
+            it(@"should not respond", ^{
+                spy_on(client.webView);
+                client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"wait");
+                spy_on(client.interface);
+                client.interface should_not have_received(@selector(sendSuccessMessage:));
+            });
+        });
+
     });
 });
 

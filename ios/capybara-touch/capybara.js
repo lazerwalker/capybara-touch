@@ -1,3 +1,19 @@
+CapybaraInvocation = {
+  focus: function(x, y) {
+    this.performAction('click', {x: x, y: y});
+  },
+
+  performAction: function(action, data) {
+    var encodedData = JSON.stringify(data);
+    var url ="capybara://" + action + "/" + encodedData;
+
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute("src", url);
+    document.documentElement.appendChild(iframe);
+    iframe.parentNode.removeChild(iframe);
+  }
+};
+
 Capybara = {
   nextIndex: 0,
   nodes: {},
@@ -265,7 +281,10 @@ Capybara = {
   },
 
   focus: function(index) {
-    this.nodes[index].focus();
+    var node = this.nodes[index];
+    var position = this.centerPosition(node);
+    CapybaraInvocation.focus(position.x, position.y);
+    return "wait";
   },
 
   selectOption: function(index) {

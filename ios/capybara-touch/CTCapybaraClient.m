@@ -3,7 +3,6 @@
 #import "NSArray+Enumerable.h"
 #import "UIFakeTouch.h"
 
-
 @interface CTCapybaraClient ()
 
 @property (strong, nonatomic) CTInterface *interface;
@@ -19,21 +18,15 @@
     if (self = [super init]) {
         self.interface = [[CTInterface alloc] init];
         self.interface.delegate = self;
+
+        self.webView = [[UIWebView alloc] init];
+        self.webView.delegate = self;
     }
     return self;
 }
 
 - (void)connect {
     [self.interface startWithPort:9292 domain:@"localhost"];
-}
-
-- (void)didFinishLoadingWebView {
-    [self injectCapybaraIntoCurrentPage];
-
-    if (self.webViewLoadCompletionBlock) {
-        self.webViewLoadCompletionBlock();
-        self.webViewLoadCompletionBlock = nil;
-    }
 }
 
 #pragma mark - CTCapybaraDelegate methods
@@ -68,17 +61,67 @@
 
     NSArray *args = [arguments subarrayWithRange:NSMakeRange(1, arguments.count - 1)];
     args = [args map:^id(NSString *argument, NSUInteger idx) {
-        return [self stripJsonArrayFromNodeIndex:argument];
+        return [NSString stringWithFormat:@"\"%@\"", [self stripJsonArrayFromNodeIndex:argument]];
     }];
 
     NSString *js = [NSString stringWithFormat:@"Capybara.%@(%@);", command, [args componentsJoinedByString:@", "]];
     NSString *result = [self execute:js];
-    if ([result isEqualToString:@""]) {
-        result = @"false";
+    NSLog(@"JS Result: %@", result);
+    if (![result isEqualToString:@"wait"]) {
+        if ([result isEqualToString:@""]) {
+            result = @"false";
+        }
+
+        [self.interface sendSuccessMessage:result];
     }
 
-    NSLog(@"JS Result: %@", result);
-    [self.interface sendSuccessMessage:result];
+}
+
+#pragma mark - UIWebViewDelegate
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self injectCapybaraIntoCurrentPage];
+
+    if (self.webViewLoadCompletionBlock) {
+        self.webViewLoadCompletionBlock();
+        self.webViewLoadCompletionBlock = nil;
+    }
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+
+    NSDictionary *mapping = @{
+                              @"click": @"tapAtPoint:"
+                              };
+
+    if (!([request.URL.scheme isEqualToString:@"https"] || [request.URL.scheme isEqualToString:@"http"])) {
+
+        NSString *action = mapping[request.URL.host];
+        if (action) {
+            SEL actionSelector = NSSelectorFromString(action);
+
+            NSString *jsonString = [request.URL.path substringFromIndex:1];
+            NSData *jsonData = [jsonString dataUsingEncoding:NSStringEncodingConversionAllowLossy];
+            NSError *jsonError;
+
+            NSDictionary *data = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&jsonError];
+
+            if ([self respondsToSelector:actionSelector]) {
+                #pragma clang diagnostic push
+                #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                    [self performSelector:actionSelector withObject:data];
+                #pragma clang diagnostic pop
+            }
+        }
+        return NO;
+    }
+
+    return YES;
+}
+
+- (void)tapAtPoint:(NSDictionary *)point {
+    UIFakeTouch *touch = [[UIFakeTouch alloc] initInView:self.webView point:CGPointMake([point[@"x"] floatValue], [point[@"y"] floatValue])];
+    [touch sendTap];
+    [self.interface sendSuccessMessage];
 }
 
 #pragma mark - Private

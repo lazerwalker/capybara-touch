@@ -20,18 +20,12 @@
 {
     [super viewDidLoad];
 
-    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    self.view = self.webView;
-    self.webView.delegate = self;
+    CGRect frame = self.view.bounds;
+    self.view = self.client.webView;
+    self.view.frame = frame;
 
-    self.client.webView = self.webView;
     NSLog(@"Connecting to client");
     [self.client connect];
-}
-
-#pragma mark - UIWebViewDelegate
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self.client didFinishLoadingWebView];
 }
 
 @end

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface CTViewController : UIViewController<UIWebViewDelegate>
+@interface CTViewController : UIViewController
 
 @property (strong, nonatomic) UIWebView *webView;
 

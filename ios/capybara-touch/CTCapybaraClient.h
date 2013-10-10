@@ -9,10 +9,9 @@
 
 @end
 
-@interface CTCapybaraClient : NSObject<CTCapybaraDelegate>
+@interface CTCapybaraClient : NSObject<CTCapybaraDelegate, UIWebViewDelegate>
 
 - (void)connect;
-- (void)didFinishLoadingWebView;
 
 @property (strong, nonatomic) UIWebView *webView;
 
