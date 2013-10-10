@@ -10,6 +10,8 @@
 	<string>capybara-touch</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>1BBA86F1-996E-4A5A-B4A5-4A1A4A31C2E2</key>
+		<string>https://github.com/kennytm/iphone-private-frameworks.git</string>
 		<key>791C020B-BA24-420A-97E3-80224C2F7A7E</key>
 		<string>ssh://github.com/lazerwalker/capybara-touch.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>ios/capybara-touch.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>1BBA86F1-996E-4A5A-B4A5-4A1A4A31C2E2</key>
+		<string>../../../../Other/iphone-private-frameworks</string>
 		<key>791C020B-BA24-420A-97E3-80224C2F7A7E</key>
 		<string>../../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>791C020B-BA24-420A-97E3-80224C2F7A7E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>capybara-touch</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1BBA86F1-996E-4A5A-B4A5-4A1A4A31C2E2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iphone-private-frameworks</string>
 		</dict>
 	</array>
 </dict>

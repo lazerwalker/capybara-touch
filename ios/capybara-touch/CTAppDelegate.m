@@ -1,5 +1,4 @@
 #import "CTAppDelegate.h"
-
 #import "CTViewController.h"
 
 @implementation CTAppDelegate

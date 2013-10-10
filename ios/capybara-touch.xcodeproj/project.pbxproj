@@ -21,10 +21,14 @@
 		A60FFD341779059A00A850CD /* CTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD331779059A00A850CD /* CTViewController.m */; };
 		A60FFD41177905D000A850CD /* capybara.js in Resources */ = {isa = PBXBuildFile; fileRef = A60FFD40177905D000A850CD /* capybara.js */; };
 		A60FFD4517790E7E00A850CD /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD4417790E7E00A850CD /* TCPServer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A623F81D18045D3D00F8A42F /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A623F81C18045D3D00F8A42F /* UIFakeTouch.m */; };
+		A623F81E18045D3D00F8A42F /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A623F81C18045D3D00F8A42F /* UIFakeTouch.m */; };
+		A6471D35180700B40014E8C0 /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6471D34180700B40014E8C0 /* GraphicsServices.framework */; };
 		A652695717FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */; };
 		A652695817FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */; };
 		A652695A17FB850B0023FBC0 /* CTCapybaraClientSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = A652695917FB850B0023FBC0 /* CTCapybaraClientSpec.mm */; };
 		A652695D17FC85010023FBC0 /* CTViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = A652695C17FC85010023FBC0 /* CTViewControllerSpec.mm */; };
+		A68A3D131806F879007503FE /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68A3D121806F879007503FE /* GraphicsServices.framework */; };
 		A6EDC1F117FB2DBD00841538 /* CTInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EDC1F017FB2DBD00841538 /* CTInterface.m */; };
 		A6FDB5F517FB598D00494C4B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDB5F417FB598D00494C4B /* SenTestingKit.framework */; };
 		A6FDB5F617FB598D00494C4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1E1779059A00A850CD /* CoreGraphics.framework */; };
@@ -56,11 +60,30 @@
 		A60FFD40177905D000A850CD /* capybara.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = capybara.js; sourceTree = "<group>"; };
 		A60FFD4317790E7E00A850CD /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPServer.h; sourceTree = "<group>"; };
 		A60FFD4417790E7E00A850CD /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPServer.m; sourceTree = "<group>"; };
+		A623F81B18045D3D00F8A42F /* UIFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIFakeTouch.h; path = Extensions/UIFakeTouch.h; sourceTree = "<group>"; };
+		A623F81C18045D3D00F8A42F /* UIFakeTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIFakeTouch.m; path = Extensions/UIFakeTouch.m; sourceTree = "<group>"; };
+		A6471D34180700B40014E8C0 /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks/GraphicsServices.framework; sourceTree = "<absolute>"; };
 		A652695517FB84DE0023FBC0 /* CTCapybaraClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCapybaraClient.h; sourceTree = "<group>"; };
 		A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCapybaraClient.m; sourceTree = "<group>"; };
 		A652695917FB850B0023FBC0 /* CTCapybaraClientSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CTCapybaraClientSpec.mm; path = Domain/CTCapybaraClientSpec.mm; sourceTree = "<group>"; };
 		A652695C17FC85010023FBC0 /* CTViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CTViewControllerSpec.mm; path = UI/CTViewControllerSpec.mm; sourceTree = "<group>"; };
 		A652695F17FC9A060023FBC0 /* CTCapybaraClient+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CTCapybaraClient+Spec.h"; path = "Extensions/CTCapybaraClient+Spec.h"; sourceTree = "<group>"; };
+		A67EC43F1806109900F37936 /* GraphicsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsServices.h; sourceTree = "<group>"; };
+		A67EC4401806109900F37936 /* GSBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBase.h; sourceTree = "<group>"; };
+		A67EC4411806109900F37936 /* GSCapability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCapability.h; sourceTree = "<group>"; };
+		A67EC4421806109900F37936 /* GSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSColor.h; sourceTree = "<group>"; };
+		A67EC4431806109900F37936 /* GSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEvent.h; sourceTree = "<group>"; };
+		A67EC4441806109900F37936 /* GSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFont.h; sourceTree = "<group>"; };
+		A67EC4451806109900F37936 /* GSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGeometry.h; sourceTree = "<group>"; };
+		A67EC4461806109900F37936 /* GSHeartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHeartbeat.h; sourceTree = "<group>"; };
+		A67EC4471806109900F37936 /* GSHiccup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHiccup.h; sourceTree = "<group>"; };
+		A67EC4481806109900F37936 /* GSKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyboard.h; sourceTree = "<group>"; };
+		A67EC4491806109900F37936 /* GSMainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainScreen.h; sourceTree = "<group>"; };
+		A67EC44A1806109900F37936 /* GSMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMaps.h; sourceTree = "<group>"; };
+		A67EC44B1806109900F37936 /* GSStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSStatusBar.h; sourceTree = "<group>"; };
+		A67EC44C1806109900F37936 /* GSWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSWindow.h; sourceTree = "<group>"; };
+		A67EC44D180610C100F37936 /* Availability2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Availability2.h; sourceTree = "<group>"; };
+		A68A3D121806F879007503FE /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GraphicsServices.framework; sourceTree = DEVELOPER_DIR; };
 		A6EDC1EF17FB2DBD00841538 /* CTInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTInterface.h; path = Domain/CTInterface.h; sourceTree = "<group>"; };
 		A6EDC1F017FB2DBD00841538 /* CTInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTInterface.m; path = Domain/CTInterface.m; sourceTree = "<group>"; };
 		A6FDB5F317FB598D00494C4B /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +94,7 @@
 		A6FDB60217FB598E00494C4B /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cedar-iOS.framework"; path = "Frameworks/Cedar-iOS.framework"; sourceTree = "<group>"; };
 		A6FDB60417FB598E00494C4B /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		A6FDB60917FB5BF200494C4B /* CTInterfaceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CTInterfaceSpec.mm; path = Domain/CTInterfaceSpec.mm; sourceTree = "<group>"; };
+		A6FEAA35180616A8001A04F8 /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/7.0 (11A4449d)/Symbols/System/Library/PrivateFrameworks/GraphicsServices.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68A3D131806F879007503FE /* GraphicsServices.framework in Frameworks */,
+				A6471D35180700B40014E8C0 /* GraphicsServices.framework in Frameworks */,
 				A60FFD1B1779059A00A850CD /* UIKit.framework in Frameworks */,
 				A60FFD1D1779059A00A850CD /* Foundation.framework in Frameworks */,
 				A60FFD1F1779059A00A850CD /* CoreGraphics.framework in Frameworks */,
@@ -104,6 +130,8 @@
 			children = (
 				A60AA62B18032462000A59C4 /* NSArray+Enumerable.h */,
 				A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */,
+				A623F81B18045D3D00F8A42F /* UIFakeTouch.h */,
+				A623F81C18045D3D00F8A42F /* UIFakeTouch.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -130,6 +158,7 @@
 		A60FFD191779059A00A850CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A68A3D141807361C007503FE /* Private Frameworks */,
 				A60FFD1A1779059A00A850CD /* UIKit.framework */,
 				A60FFD1C1779059A00A850CD /* Foundation.framework */,
 				A60FFD1E1779059A00A850CD /* CoreGraphics.framework */,
@@ -192,6 +221,40 @@
 				A652695F17FC9A060023FBC0 /* CTCapybaraClient+Spec.h */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A67EC43E1806109900F37936 /* GraphicsServices */ = {
+			isa = PBXGroup;
+			children = (
+				A67EC44D180610C100F37936 /* Availability2.h */,
+				A67EC43F1806109900F37936 /* GraphicsServices.h */,
+				A67EC4401806109900F37936 /* GSBase.h */,
+				A67EC4411806109900F37936 /* GSCapability.h */,
+				A67EC4421806109900F37936 /* GSColor.h */,
+				A67EC4431806109900F37936 /* GSEvent.h */,
+				A67EC4441806109900F37936 /* GSFont.h */,
+				A67EC4451806109900F37936 /* GSGeometry.h */,
+				A67EC4461806109900F37936 /* GSHeartbeat.h */,
+				A67EC4471806109900F37936 /* GSHiccup.h */,
+				A67EC4481806109900F37936 /* GSKeyboard.h */,
+				A67EC4491806109900F37936 /* GSMainScreen.h */,
+				A67EC44A1806109900F37936 /* GSMaps.h */,
+				A67EC44B1806109900F37936 /* GSStatusBar.h */,
+				A67EC44C1806109900F37936 /* GSWindow.h */,
+			);
+			name = GraphicsServices;
+			path = "capybara-touch/Private Frameworks/GraphicsServices";
+			sourceTree = "<group>";
+		};
+		A68A3D141807361C007503FE /* Private Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A68A3D121806F879007503FE /* GraphicsServices.framework */,
+				A6FEAA35180616A8001A04F8 /* GraphicsServices.framework */,
+				A6471D34180700B40014E8C0 /* GraphicsServices.framework */,
+				A67EC43E1806109900F37936 /* GraphicsServices */,
+			);
+			name = "Private Frameworks";
 			sourceTree = "<group>";
 		};
 		A6EDC1EE17FB2D8100841538 /* Domain */ = {
@@ -348,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EDC1F117FB2DBD00841538 /* CTInterface.m in Sources */,
+				A623F81D18045D3D00F8A42F /* UIFakeTouch.m in Sources */,
 				A60AA62D18032462000A59C4 /* NSArray+Enumerable.m in Sources */,
 				A60FFD271779059A00A850CD /* main.m in Sources */,
 				A652695717FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */,
@@ -366,6 +430,7 @@
 				A652695A17FB850B0023FBC0 /* CTCapybaraClientSpec.mm in Sources */,
 				A6FDB60A17FB5BF200494C4B /* CTInterfaceSpec.mm in Sources */,
 				A60AA62E18032462000A59C4 /* NSArray+Enumerable.m in Sources */,
+				A623F81E18045D3D00F8A42F /* UIFakeTouch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,11 +519,19 @@
 		A60FFD3E1779059A00A850CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "capybara-touch/capybara-touch-Prefix.pch";
 				INFOPLIST_FILE = "capybara-touch/capybara-touch-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "$(SRCROOT)/build";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/GraphicsServices";
 				VALID_ARCHS = "armv7 armv7s x86_64 i386";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,11 +540,19 @@
 		A60FFD3F1779059A00A850CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "capybara-touch/capybara-touch-Prefix.pch";
 				INFOPLIST_FILE = "capybara-touch/capybara-touch-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "$(SRCROOT)/build";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/GraphicsServices";
 				VALID_ARCHS = "armv7 armv7s x86_64 i386";
 				WRAPPER_EXTENSION = app;
 			};
@@ -490,6 +571,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios/Specs/Frameworks",
+					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
@@ -529,6 +611,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios/Specs/Frameworks",
+					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";

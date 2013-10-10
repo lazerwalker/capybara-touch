@@ -1,6 +1,8 @@
 #import "CTCapybaraClient.h"
 #import "CTInterface.h"
 #import "NSArray+Enumerable.h"
+#import "UIFakeTouch.h"
+
 
 @interface CTCapybaraClient ()
 
