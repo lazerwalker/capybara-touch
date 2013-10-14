@@ -2,12 +2,14 @@
 #import "CTInterface.h"
 #import "NSArray+Enumerable.h"
 #import "UIFakeTouch.h"
+#import "UIFakeKeypress.h"
 
 @interface CTCapybaraClient ()
 
 @property (strong, nonatomic) CTInterface *interface;
 @property (copy, nonatomic) void (^webViewLoadCompletionBlock)();
 @property (strong, nonatomic) NSString *capybaraJS;
+@property (strong, nonatomic) UIFakeKeypress *fakeKeypress;
 
 @end
 
@@ -21,6 +23,8 @@
 
         self.webView = [[UIWebView alloc] init];
         self.webView.delegate = self;
+
+        self.fakeKeypress = [[UIFakeKeypress alloc] init];
     }
     return self;
 }
@@ -90,7 +94,9 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 
     NSDictionary *mapping = @{
-                              @"click": @"tapAtPoint:"
+                              @"click": @"tapAtPoint:",
+                              @"keypress": @"keypress:",
+                              @"success": @"sendSuccess"
                               };
 
     if (!([request.URL.scheme isEqualToString:@"https"] || [request.URL.scheme isEqualToString:@"http"])) {
@@ -103,7 +109,7 @@
             NSData *jsonData = [jsonString dataUsingEncoding:NSStringEncodingConversionAllowLossy];
             NSError *jsonError;
 
-            NSDictionary *data = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&jsonError];
+            id data = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&jsonError];
 
             if ([self respondsToSelector:actionSelector]) {
                 #pragma clang diagnostic push
@@ -121,6 +127,17 @@
 - (void)tapAtPoint:(NSDictionary *)point {
     UIFakeTouch *touch = [[UIFakeTouch alloc] initInView:self.webView point:CGPointMake([point[@"x"] floatValue], [point[@"y"] floatValue])];
     [touch sendTap];
+}
+
+- (void)keypress:(NSString *)key {
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        UIFakeKeypress *keypress = [[UIFakeKeypress alloc] init];
+        [keypress sendKeypressForChar:[key substringWithRange:NSMakeRange(0, 1)]];
+    });
+}
+
+- (void)sendSuccess {
     [self.interface sendSuccessMessage];
 }
 

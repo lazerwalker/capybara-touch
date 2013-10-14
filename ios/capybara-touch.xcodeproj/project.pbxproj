@@ -23,6 +23,7 @@
 		A60FFD4517790E7E00A850CD /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD4417790E7E00A850CD /* TCPServer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A623F81D18045D3D00F8A42F /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A623F81C18045D3D00F8A42F /* UIFakeTouch.m */; };
 		A623F81E18045D3D00F8A42F /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A623F81C18045D3D00F8A42F /* UIFakeTouch.m */; };
+		A640092F180C4189000FE62E /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = A640092E180C4189000FE62E /* UIFakeKeypress.m */; };
 		A6471D35180700B40014E8C0 /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6471D34180700B40014E8C0 /* GraphicsServices.framework */; };
 		A652695717FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */; };
 		A652695817FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */; };
@@ -62,6 +63,8 @@
 		A60FFD4417790E7E00A850CD /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPServer.m; sourceTree = "<group>"; };
 		A623F81B18045D3D00F8A42F /* UIFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIFakeTouch.h; path = Extensions/UIFakeTouch.h; sourceTree = "<group>"; };
 		A623F81C18045D3D00F8A42F /* UIFakeTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIFakeTouch.m; path = Extensions/UIFakeTouch.m; sourceTree = "<group>"; };
+		A640092D180C4189000FE62E /* UIFakeKeypress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIFakeKeypress.h; path = Extensions/UIFakeKeypress.h; sourceTree = "<group>"; };
+		A640092E180C4189000FE62E /* UIFakeKeypress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIFakeKeypress.m; path = Extensions/UIFakeKeypress.m; sourceTree = "<group>"; };
 		A6471D34180700B40014E8C0 /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks/GraphicsServices.framework; sourceTree = "<absolute>"; };
 		A652695517FB84DE0023FBC0 /* CTCapybaraClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCapybaraClient.h; sourceTree = "<group>"; };
 		A652695617FB84DE0023FBC0 /* CTCapybaraClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCapybaraClient.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */,
 				A623F81B18045D3D00F8A42F /* UIFakeTouch.h */,
 				A623F81C18045D3D00F8A42F /* UIFakeTouch.m */,
+				A640092D180C4189000FE62E /* UIFakeKeypress.h */,
+				A640092E180C4189000FE62E /* UIFakeKeypress.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A640092F180C4189000FE62E /* UIFakeKeypress.m in Sources */,
 				A6EDC1F117FB2DBD00841538 /* CTInterface.m in Sources */,
 				A623F81D18045D3D00F8A42F /* UIFakeTouch.m in Sources */,
 				A60AA62D18032462000A59C4 /* NSArray+Enumerable.m in Sources */,
@@ -523,7 +529,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks\"",
+					"\\\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks\\\"",
+					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "capybara-touch/capybara-touch-Prefix.pch";
@@ -544,7 +551,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks\"",
+					"\\\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/PrivateFrameworks\\\"",
+					"/Users/michaelwalker/Dropbox/Code/capybara-touch/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "capybara-touch/capybara-touch-Prefix.pch";

@@ -17,7 +17,7 @@
 
 // TODO: This problem SHOULD have been solved by UIView convertPoint:inView:, but it wasn't working.
 - (void)setPoint:(CGPoint)point {
-    _point = CGPointMake(point.x, point.y + 20);
+    _point = CGPointMake(point.x, point.y + 40);
 }
 
 - (void)sendTap {
@@ -40,7 +40,6 @@
         GSHandInfo    handInfo;
     } * event = (struct GSTouchEvent*) &touchEvent;
     bzero(event, sizeof(event));
-
     event->record.type = kGSEventHand;
     event->record.subtype = kGSEventSubTypeUnknown;
     event->record.location = self.point;

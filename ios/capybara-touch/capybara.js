@@ -3,6 +3,14 @@ CapybaraInvocation = {
     this.performAction('click', {x: x, y: y});
   },
 
+  keypress: function(c) {
+    this.performAction('keypress', c);
+  },
+
+  completed: function() {
+    this.performAction('success');
+  },
+
   performAction: function(action, data) {
     var encodedData = JSON.stringify(data);
     var url ="capybara://" + action + "/" + encodedData;
@@ -278,6 +286,8 @@ Capybara = {
     } else {
       node.value = value;
     }
+
+    CapybaraInvocation.completed();
   },
 
   focus: function(index) {
