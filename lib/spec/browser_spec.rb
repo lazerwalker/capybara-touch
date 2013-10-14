@@ -1,21 +1,21 @@
 require 'spec_helper'
 require 'self_signed_ssl_cert'
 require 'stringio'
-require 'capybara/webkit/driver'
+require 'capybara/touch/driver'
 require 'socket'
 require 'base64'
 
-describe Capybara::Webkit::Browser do
+describe Capybara::Touch::Browser do
 
-  let(:connection) { Capybara::Webkit::Connection.new }
-  let(:browser) { Capybara::Webkit::Browser.new(connection) }
+  let(:connection) { Capybara::Touch::Connection.new }
+  let(:browser) { Capybara::Touch::Browser.new(connection) }
   let(:browser_ignore_ssl_err) do
-    Capybara::Webkit::Browser.new(Capybara::Webkit::Connection.new).tap do |browser|
+    Capybara::Touch::Browser.new(Capybara::Touch::Connection.new).tap do |browser|
       browser.ignore_ssl_errors
     end
   end
   let(:browser_skip_images) do
-    Capybara::Webkit::Browser.new(Capybara::Webkit::Connection.new).tap do |browser|
+    Capybara::Touch::Browser.new(Capybara::Touch::Connection.new).tap do |browser|
       browser.set_skip_image_loading(true)
     end
   end
@@ -255,7 +255,7 @@ describe Capybara::Webkit::Browser do
     connection.stub(:gets).and_return("ok\n", "0\n")
     connection.stub(:read).and_raise(StandardError.new("tried to read empty response"))
 
-    browser = Capybara::Webkit::Browser.new(connection)
+    browser = Capybara::Touch::Browser.new(connection)
 
     expect { browser.visit("/") }.not_to raise_error(/empty response/)
   end
@@ -269,7 +269,7 @@ describe Capybara::Webkit::Browser do
         connection.should_receive(:gets).ordered.and_return error_json.bytesize
         connection.stub read: error_json
 
-        expect { browser.command 'blah', 'meh' }.to raise_error(Capybara::Webkit::ClickFailed)
+        expect { browser.command 'blah', 'meh' }.to raise_error(Capybara::Touch::ClickFailed)
       end
     end
   end

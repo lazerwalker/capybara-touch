@@ -1,10 +1,10 @@
 # -*- encoding: UTF-8 -*-
 
 require 'spec_helper'
-require 'capybara/webkit/driver'
+require 'capybara/touch/driver'
 require 'base64'
 
-describe Capybara::Webkit::Driver do
+describe Capybara::Touch::Driver do
   include AppRunner
 
   def visit(url, driver=driver)
@@ -83,12 +83,12 @@ describe Capybara::Webkit::Driver do
 
     it "raises error for missing frame by index" do
       expect { driver.within_frame(1) { } }.
-        to raise_error(Capybara::Webkit::InvalidResponseError)
+        to raise_error(Capybara::Touch::InvalidResponseError)
     end
 
     it "raise_error for missing frame by id" do
       expect { driver.within_frame("foo") { } }.
-        to raise_error(Capybara::Webkit::InvalidResponseError)
+        to raise_error(Capybara::Touch::InvalidResponseError)
     end
 
     it "returns an attribute's value" do
@@ -179,7 +179,7 @@ describe Capybara::Webkit::Driver do
     end
 
     it "raises error whose message references the actual missing url" do
-      expect { visit("/") }.to raise_error(Capybara::Webkit::InvalidResponseError, /inner-not-found/)
+      expect { visit("/") }.to raise_error(Capybara::Touch::InvalidResponseError, /inner-not-found/)
     end
   end
 
@@ -376,12 +376,12 @@ describe Capybara::Webkit::Driver do
 
     it "raises an error for an invalid xpath query" do
       expect { driver.find_xpath("totally invalid salad") }.
-        to raise_error(Capybara::Webkit::InvalidResponseError, /xpath/i)
+        to raise_error(Capybara::Touch::InvalidResponseError, /xpath/i)
     end
 
     it "raises an error for an invalid xpath query within an element" do
       expect { driver.find_xpath("//body").first.find_xpath("totally invalid salad") }.
-        to raise_error(Capybara::Webkit::InvalidResponseError, /xpath/i)
+        to raise_error(Capybara::Touch::InvalidResponseError, /xpath/i)
     end
 
     it "returns an attribute's value" do
@@ -491,7 +491,7 @@ describe Capybara::Webkit::Driver do
 
     it "raises an error for failing Javascript" do
       expect { driver.execute_script(%<invalid salad>) }.
-        to raise_error(Capybara::Webkit::InvalidResponseError)
+        to raise_error(Capybara::Touch::InvalidResponseError)
     end
 
     it "doesn't raise an error for Javascript that doesn't return anything" do
@@ -1315,7 +1315,7 @@ describe Capybara::Webkit::Driver do
         wait_for_error_to_complete
         driver.find_xpath("//body")
       }.
-        to raise_error(Capybara::Webkit::InvalidResponseError, %r{/error})
+        to raise_error(Capybara::Touch::InvalidResponseError, %r{/error})
     end
 
     def wait_for_error_to_complete
@@ -1346,7 +1346,7 @@ describe Capybara::Webkit::Driver do
 
     it "raises a webkit error and then continues" do
       driver.find_xpath("//input").first.click
-      expect { driver.find_xpath("//p") }.to raise_error(Capybara::Webkit::InvalidResponseError)
+      expect { driver.find_xpath("//p") }.to raise_error(Capybara::Touch::InvalidResponseError)
       visit("/")
       driver.find_xpath("//p").first.visible_text.should == "hello"
     end
@@ -1448,7 +1448,7 @@ describe Capybara::Webkit::Driver do
       expect {
         driver.find_xpath("//body")
       }.
-       to raise_error(Capybara::Webkit::NoResponseError, %r{response})
+       to raise_error(Capybara::Touch::NoResponseError, %r{response})
       make_the_server_come_back
     end
 
@@ -1963,7 +1963,7 @@ describe Capybara::Webkit::Driver do
 
     it "raises an error if the window is not found" do
       expect { driver.within_window('myWindowDoesNotExist') }.
-        to raise_error(Capybara::Webkit::InvalidResponseError)
+        to raise_error(Capybara::Touch::InvalidResponseError)
     end
 
     it "has a number of window handles equal to the number of open windows" do
@@ -2042,7 +2042,7 @@ describe Capybara::Webkit::Driver do
         visit("/outer")
         sleep 1
         driver.find_xpath("//body")
-      end.to raise_error(Capybara::Webkit::InvalidResponseError)
+      end.to raise_error(Capybara::Touch::InvalidResponseError)
     end
   end
 
@@ -2252,9 +2252,9 @@ describe Capybara::Webkit::Driver do
     let(:logging_message) { 'Wrote response true' }
 
     let(:driver) do
-      connection = Capybara::Webkit::Connection.new(:stderr => output)
-      browser = Capybara::Webkit::Browser.new(connection)
-      Capybara::Webkit::Driver.new(AppRunner.app, :browser => browser)
+      connection = Capybara::Touch::Connection.new(:stderr => output)
+      browser = Capybara::Touch::Browser.new(connection)
+      Capybara::Touch::Driver.new(AppRunner.app, :browser => browser)
     end
 
     let(:output) { StringIO.new }

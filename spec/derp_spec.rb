@@ -1,13 +1,14 @@
 require 'capybara/rspec'
+require 'capybara-touch'
 require 'capybara-webkit'
 
-Capybara.default_driver = :webkit
+Capybara.default_driver = :ios
 
 describe "when searching for kitties", :type => :feature do
   it "should show some kitties" do
-    visit 'http://google.com'
+    visit 'http://duckduckgo.com'
     fill_in 'q', :with => 'kitties'
-    click_button 'Google Search'
-    page.should have_content 'Images for kitties'
+    click_button 'search_button_homepage'
+    page.should have_content 'A kitten or kitty is a juvenile domesticated cat.'
   end
 end

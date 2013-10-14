@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'capybara/webkit/driver'
+require 'capybara/touch/driver'
 require 'mini_magick'
 
-describe Capybara::Webkit::Driver, "rendering an image" do
+describe Capybara::Touch::Driver, "rendering an image" do
   include AppRunner
 
   let(:driver) do

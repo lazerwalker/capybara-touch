@@ -1,7 +1,7 @@
 # -*- encoding: UTF-8 -*-
 
 require 'spec_helper'
-require 'capybara/webkit'
+require 'capybara/touch'
 
 module TestSessions
   Webkit = Capybara::Session.new(:reusable_webkit, TestApp)
@@ -319,7 +319,7 @@ describe Capybara::Session do
         subject.within_frame('b_frame') do
           lambda {
             subject.click_button 'B Button'
-          }.should raise_error(Capybara::Webkit::ClickFailed)
+          }.should raise_error(Capybara::Touch::ClickFailed)
         end
       end
     end
@@ -391,7 +391,7 @@ describe Capybara::Session do
 
     it 'does not raise an error when an anchor contains empty nodes' do
       subject.visit('/')
-      lambda { subject.click_link('Some link') }.should_not raise_error(Capybara::Webkit::ClickFailed)
+      lambda { subject.click_link('Some link') }.should_not raise_error(Capybara::Touch::ClickFailed)
     end
 
     it 'scrolls an element into view when clicked' do
@@ -414,7 +414,7 @@ describe Capybara::Session do
 
       lambda {
         subject.find(:css, '#one').click
-      }.should raise_error(Capybara::Webkit::ClickFailed, /\[@id='one'\] at position/)
+      }.should raise_error(Capybara::Touch::ClickFailed, /\[@id='one'\] at position/)
     end
 
     it 'raises an error if a checkbox is obscured when checked' do
@@ -432,7 +432,7 @@ describe Capybara::Session do
 
       lambda {
         subject.check('bar')
-      }.should raise_error(Capybara::Webkit::ClickFailed)
+      }.should raise_error(Capybara::Touch::ClickFailed)
     end
 
     it 'raises an error if an element is not visible when clicked' do
@@ -441,7 +441,7 @@ describe Capybara::Session do
       begin
         subject.visit('/')
         subject.execute_script "document.getElementById('foo').style.display = 'none'"
-        lambda { subject.click_link "Click Me" }.should raise_error(Capybara::Webkit::ClickFailed, /\[@id='foo'\] at unknown/)
+        lambda { subject.click_link "Click Me" }.should raise_error(Capybara::Touch::ClickFailed, /\[@id='foo'\] at unknown/)
       ensure
         Capybara.ignore_hidden_elements = ignore_hidden_elements
       end
@@ -449,7 +449,7 @@ describe Capybara::Session do
 
     it 'raises an error if an element is not in the viewport when clicked' do
       subject.visit('/')
-      lambda { subject.click_link "Click Me" }.should raise_error(Capybara::Webkit::ClickFailed)
+      lambda { subject.click_link "Click Me" }.should raise_error(Capybara::Touch::ClickFailed)
     end
 
     context "with wait time of 1 second" do
@@ -468,7 +468,7 @@ describe Capybara::Session do
           }, 400);
         JS
 
-        lambda { subject.click_link "Click Me" }.should_not raise_error(Capybara::Webkit::ClickFailed)
+        lambda { subject.click_link "Click Me" }.should_not raise_error(Capybara::Touch::ClickFailed)
       end
     end
   end

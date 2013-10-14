@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
 gem 'capybara'
-gem 'capybara-webkit', path: "~/Dropbox/Code/capybara-touch/lib"
+gem 'capybara-touch', path: "~/Dropbox/Code/capybara-touch/lib"
+gem 'capybara-webkit'
 gem 'rspec'
 gem 'selenium-webdriver'
 gem 'rake'

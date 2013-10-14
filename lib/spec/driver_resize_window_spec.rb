@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'capybara/webkit/driver'
+require 'capybara/touch/driver'
 
-describe Capybara::Webkit::Driver, "#resize_window(width, height)" do
+describe Capybara::Touch::Driver, "#resize_window(width, height)" do
   include AppRunner
 
   let(:driver) do

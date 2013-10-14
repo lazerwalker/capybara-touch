@@ -1,2 +1,2 @@
-require 'lib/capybara-webkit.rb'
+require 'lib/capybara-touch.rb'
 puts "Required"

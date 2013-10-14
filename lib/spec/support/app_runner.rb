@@ -45,7 +45,7 @@ module AppRunner
   private
 
   def build_driver
-    Capybara::Webkit::Driver.new(AppRunner.app, :browser => $webkit_browser)
+    Capybara::Touch::Driver.new(AppRunner.app, :browser => $webkit_browser)
   end
 
   def self.included(example_group)

@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'capybara/webkit/connection'
+require 'capybara/touch/connection'
 
-describe Capybara::Webkit::Connection do
+describe Capybara::Touch::Connection do
   it "boots a server to talk to" do
     url = "http://#{@rack_server.host}:#{@rack_server.port}/"
     connection.puts "Visit"
@@ -20,7 +20,7 @@ describe Capybara::Webkit::Connection do
 
   it 'forwards stderr to the given IO object' do
     io = StringIO.new
-    redirected_connection = Capybara::Webkit::Connection.new(:stderr => io)
+    redirected_connection = Capybara::Touch::Connection.new(:stderr => io)
     script = 'console.log("hello world")'
     redirected_connection.puts "EnableLogging"
     redirected_connection.puts 0
@@ -34,18 +34,18 @@ describe Capybara::Webkit::Connection do
 
   it 'does not forward stderr to nil' do
     IO.should_not_receive(:copy_stream)
-    Capybara::Webkit::Connection.new(:stderr => nil)
+    Capybara::Touch::Connection.new(:stderr => nil)
   end
 
   it 'prints a deprecation warning if the stdout option is used' do
-    Capybara::Webkit::Connection.any_instance.should_receive(:warn)
-    Capybara::Webkit::Connection.new(:stdout => nil)
+    Capybara::Touch::Connection.any_instance.should_receive(:warn)
+    Capybara::Touch::Connection.new(:stdout => nil)
   end
 
   it 'does not forward stdout to nil if the stdout option is used' do
-    Capybara::Webkit::Connection.any_instance.stub(:warn)
+    Capybara::Touch::Connection.any_instance.stub(:warn)
     IO.should_not_receive(:copy_stream)
-    Capybara::Webkit::Connection.new(:stdout => nil)
+    Capybara::Touch::Connection.new(:stdout => nil)
   end
 
   it "returns the server port" do
@@ -60,15 +60,15 @@ describe Capybara::Webkit::Connection do
     else
       socket.should_not_receive(:setsockopt)
     end
-    Capybara::Webkit::Connection.new
+    Capybara::Touch::Connection.new
   end
 
   it "chooses a new port number for a new connection" do
-    new_connection = Capybara::Webkit::Connection.new
+    new_connection = Capybara::Touch::Connection.new
     new_connection.port.should_not == connection.port
   end
 
-  let(:connection) { Capybara::Webkit::Connection.new }
+  let(:connection) { Capybara::Touch::Connection.new }
 
   before(:all) do
     @app = lambda do |env|

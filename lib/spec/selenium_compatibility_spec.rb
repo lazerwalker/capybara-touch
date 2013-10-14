@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Capybara::Webkit, 'compatibility with selenium' do
+describe Capybara::Touch, 'compatibility with selenium' do
   include AppRunner
 
   it 'generates the same events as selenium when filling out forms' do
