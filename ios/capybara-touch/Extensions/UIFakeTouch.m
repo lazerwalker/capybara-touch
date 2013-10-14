@@ -14,12 +14,7 @@
     }
     return self;
 }
-
-// TODO: This problem SHOULD have been solved by UIView convertPoint:inView:, but it wasn't working.
-- (void)setPoint:(CGPoint)point {
-    _point = CGPointMake(point.x, point.y + 40);
-}
-
+    
 - (void)sendTap {
     [self sendTouchStart];
     [self sendTouchEnd];
@@ -34,6 +29,9 @@
 }
 
 - (void)sendEventForPhase:(UITouchPhase)phase {
+    CGPoint adjustedPoint = [self.view convertPoint:self.point toView:self.view.window];
+    NSLog(@"%@", NSStringFromCGPoint(adjustedPoint));
+    
     uint8_t touchEvent[sizeof(GSEventRecord) + sizeof(GSHandInfo) + sizeof(GSPathInfo)];
     struct GSTouchEvent {
         GSEventRecord record;
@@ -42,7 +40,7 @@
     bzero(event, sizeof(event));
     event->record.type = kGSEventHand;
     event->record.subtype = kGSEventSubTypeUnknown;
-    event->record.location = self.point;
+    event->record.location = adjustedPoint;
     event->record.timestamp = GSCurrentEventTimestamp();
     event->record.infoSize = sizeof(GSHandInfo) + sizeof(GSPathInfo);
     event->handInfo.type = kGSHandInfoTypeTouchDown;
@@ -52,7 +50,7 @@
     event->handInfo.pathInfos[0].pathIndex     = 1;
     event->handInfo.pathInfos[0].pathIdentity  = 2;
     event->handInfo.pathInfos[0].pathProximity = (phase == UITouchPhaseBegan) ? 0x03 : 0x00;
-    event->handInfo.pathInfos[0].pathLocation  = self.point;
+    event->handInfo.pathInfos[0].pathLocation  = adjustedPoint;
 
     mach_port_t port = (mach_port_t)[self getFrontMostAppPort];
 
