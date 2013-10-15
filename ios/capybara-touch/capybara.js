@@ -1,14 +1,18 @@
 CapybaraInvocation = {
   focus: function(x, y) {
-    this.performAction('click', {x: x, y: y});
+    this.performAction('focus', {x: x, y: y});
   },
 
   keypress: function(string) {
     this.performAction('keypress', string);
   },
 
-  completed: function() {
-    this.performAction('success');
+  leftClick: function(x, y) {
+      this.performAction('click', {x: x, y: y});
+  },
+
+  rightClick: function(x, y) {
+    this.performAction('click', {x: x, y: y});
   },
 
   performAction: function(action, data) {
@@ -171,14 +175,7 @@ Capybara = {
   },
 
   clickPosition: function(node) {
-    var rects = node.getClientRects();
-    var rect;
-
-    for (var i = 0; i < rects.length; i++) {
-      rect = rects[i];
-      if (rect.width > 0 && rect.height > 0)
-        return CapybaraInvocation.clickPosition(node, rect.left, rect.top, rect.width, rect.height);
-    }
+    return this.centerPosition(node);
   },
 
   click: function (index, action) {
@@ -186,15 +183,16 @@ Capybara = {
     node.scrollIntoViewIfNeeded();
 
     var pos = this.clickPosition(node);
-
-    if (pos && this.clickTest(node, pos))
-      action(pos.absoluteX, pos.absoluteY);
-    else
-      throw new Capybara.ClickFailed(this.path(index), pos);
+    action(pos.absoluteX, pos.absoluteY);
   },
 
   leftClick: function (index) {
-    this.click(index, CapybaraInvocation.leftClick);
+    var node = this.nodes[index];
+    node.scrollIntoViewIfNeeded();
+
+    var pos = this.clickPosition(node);
+    CapybaraInvocation.leftClick(pos.x, pos.y);
+    return "wait";
   },
 
   doubleClick: function(index) {
@@ -270,10 +268,7 @@ Capybara = {
       if (!node.readOnly)
         node.value = "";
 
-      for (strindex = 0; strindex < length; strindex++) {
-        CapybaraInvocation.keypress(value[strindex]);
-      }
-
+      CapybaraInvocation.keypress(value);
     } else if (type === "checkbox" || type === "radio") {
       if (node.checked != (value === "true")) {
         this.leftClick(index);
@@ -286,8 +281,7 @@ Capybara = {
     } else {
       node.value = value;
     }
-
-    CapybaraInvocation.completed();
+    return "wait";
   },
 
   focus: function(index) {

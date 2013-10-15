@@ -95,8 +95,8 @@
 
     NSDictionary *mapping = @{
                               @"click": @"tapAtPoint:",
-                              @"keypress": @"keypress:",
-                              @"success": @"sendSuccess"
+                              @"focus": @"partialTapAtPoint:",
+                              @"keypress": @"keypress:"
                               };
 
     if (!([request.URL.scheme isEqualToString:@"https"] || [request.URL.scheme isEqualToString:@"http"])) {
@@ -127,6 +127,12 @@
 - (void)tapAtPoint:(NSDictionary *)point {
     UIFakeTouch *touch = [[UIFakeTouch alloc] initInView:self.webView point:CGPointMake([point[@"x"] floatValue], [point[@"y"] floatValue])];
     [touch sendTap];
+    [self.interface sendSuccessMessage];
+}
+
+- (void)partialTapAtPoint:(NSDictionary *)point {
+    UIFakeTouch *touch = [[UIFakeTouch alloc] initInView:self.webView point:CGPointMake([point[@"x"] floatValue], [point[@"y"] floatValue])];
+    [touch sendTap];
 }
 
 - (void)keypress:(NSString *)key {
@@ -134,11 +140,8 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         UIFakeKeypress *keypress = [[UIFakeKeypress alloc] init];
         [keypress sendKeypressForString:key];
+        [self.interface sendSuccessMessage];
     });
-}
-
-- (void)sendSuccess {
-    [self.interface sendSuccessMessage];
 }
 
 #pragma mark - Private
