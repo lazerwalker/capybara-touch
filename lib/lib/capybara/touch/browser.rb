@@ -221,8 +221,8 @@ module Capybara::Touch
     def read_response
       response_length = @connection.gets.to_i
       if response_length > 0
-        response = @connection.gets
-        response.strip! if response
+        response = @connection.read(response_length + 1)
+        response.strip!
         response.force_encoding("UTF-8") if response.respond_to?(:force_encoding)
         response
       else

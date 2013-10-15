@@ -46,7 +46,7 @@
 - (void)sendSuccessMessage:(NSString *)message {
     NSString *successMessage = @"ok\n";
     if (message) {
-        successMessage = [NSString stringWithFormat:@"%@%d\n%@\n", successMessage, message.length, message];
+        successMessage = [NSString stringWithFormat:@"%@%d\n%@\n", successMessage, strlen(message.UTF8String), message];
     } else {
         successMessage = [successMessage stringByAppendingString:@"0\n"];
     }

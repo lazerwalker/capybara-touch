@@ -69,6 +69,7 @@
     }];
 
     NSString *js = [NSString stringWithFormat:@"Capybara.%@(%@);", command, [args componentsJoinedByString:@", "]];
+
     NSString *result = [self execute:js];
     NSLog(@"JS Result: %@", result);
     if (![result isEqualToString:@"wait"]) {
@@ -78,7 +79,6 @@
 
         [self.interface sendSuccessMessage:result];
     }
-
 }
 
 #pragma mark - UIWebViewDelegate
@@ -99,7 +99,7 @@
                               @"keypress": @"keypress:"
                               };
 
-    if (!([request.URL.scheme isEqualToString:@"https"] || [request.URL.scheme isEqualToString:@"http"])) {
+    if ([request.URL.scheme isEqualToString:@"capybara"]) {
 
         NSString *action = mapping[request.URL.host];
         if (action) {
@@ -127,7 +127,19 @@
 - (void)tapAtPoint:(NSDictionary *)point {
     UIFakeTouch *touch = [[UIFakeTouch alloc] initInView:self.webView point:CGPointMake([point[@"x"] floatValue], [point[@"y"] floatValue])];
     [touch sendTap];
-    [self.interface sendSuccessMessage];
+
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if (self.webView.isLoading) {
+            CTCapybaraClient *weakSelf = self;
+            self.webViewLoadCompletionBlock = ^{
+                [weakSelf.interface sendSuccessMessage];
+            };
+        } else {
+            [self.interface sendSuccessMessage];
+        }
+    });
+
 }
 
 - (void)partialTapAtPoint:(NSDictionary *)point {
@@ -140,7 +152,10 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         UIFakeKeypress *keypress = [[UIFakeKeypress alloc] init];
         [keypress sendKeypressForString:key];
-        [self.interface sendSuccessMessage];
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.interface sendSuccessMessage];
+        });
     });
 }
 
