@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @interface UIFakeTouch: NSObject
 
 @property (nonatomic, strong) UIView *view;

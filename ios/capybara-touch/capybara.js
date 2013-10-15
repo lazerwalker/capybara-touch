@@ -206,8 +206,6 @@ Capybara = {
 
   hover: function (index) {
     var node = this.nodes[index];
-    node.scrollIntoViewIfNeeded();
-
     var pos = this.clickPosition(node);
     if (pos)
       CapybaraInvocation.hover(pos.absoluteX, pos.absoluteY);
@@ -304,18 +302,10 @@ Capybara = {
   centerPosition: function(element) {
     this.reflow(element);
     var rect = element.getBoundingClientRect();
-    var position = {
-      x: rect.width / 2,
-      y: rect.height / 2
+    return {
+      x: Math.floor(rect.left + (rect.width / 2)),
+      y: Math.floor(rect.top + (rect.height / 2))
     };
-    do {
-        position.x += element.offsetLeft;
-        position.y += element.offsetTop;
-    } while ((element = element.offsetParent));
-    position.x = Math.floor(position.x);
-    position.y = Math.floor(position.y);
-
-    return position;
   },
 
   reflow: function(element, force) {

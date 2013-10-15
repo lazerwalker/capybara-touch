@@ -30,8 +30,8 @@
 
 - (void)sendEventForPhase:(UITouchPhase)phase {
     CGPoint adjustedPoint = [self.view convertPoint:self.point toView:self.view.window];
-    NSLog(@"%@", NSStringFromCGPoint(adjustedPoint));
-    
+    NSLog(@"Creating a point at %@", NSStringFromCGPoint(adjustedPoint));
+
     uint8_t touchEvent[sizeof(GSEventRecord) + sizeof(GSHandInfo) + sizeof(GSPathInfo)];
     struct GSTouchEvent {
         GSEventRecord record;
@@ -40,10 +40,10 @@
     bzero(event, sizeof(event));
     event->record.type = kGSEventHand;
     event->record.subtype = kGSEventSubTypeUnknown;
-    event->record.location = adjustedPoint;
+    event->record.location = self.point;
     event->record.timestamp = GSCurrentEventTimestamp();
     event->record.infoSize = sizeof(GSHandInfo) + sizeof(GSPathInfo);
-    event->handInfo.type = kGSHandInfoTypeTouchDown;
+    event->handInfo.type = (phase == UITouchPhaseBegan) ? kGSHandInfoTypeTouchDown : kGSHandInfoTypeTouchUp;
     event->handInfo.pathInfosCount = 1;
 
     bzero(&event->handInfo.pathInfos[0], sizeof(GSPathInfo));
