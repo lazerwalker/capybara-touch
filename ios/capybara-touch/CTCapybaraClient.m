@@ -133,7 +133,7 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         UIFakeKeypress *keypress = [[UIFakeKeypress alloc] init];
-        [keypress sendKeypressForChar:[key substringWithRange:NSMakeRange(0, 1)]];
+        [keypress sendKeypressForString:key];
     });
 }
 

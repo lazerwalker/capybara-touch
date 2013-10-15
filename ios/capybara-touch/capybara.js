@@ -3,8 +3,8 @@ CapybaraInvocation = {
     this.performAction('click', {x: x, y: y});
   },
 
-  keypress: function(c) {
-    this.performAction('keypress', c);
+  keypress: function(string) {
+    this.performAction('keypress', string);
   },
 
   completed: function() {

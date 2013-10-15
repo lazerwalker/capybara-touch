@@ -12,14 +12,14 @@
 
 @implementation UIFakeKeypress
 
-- (void)sendKeypressForChar:(NSString *)c {
-    if (c.length > 1) {
-        c = [c substringWithRange:NSMakeRange(0, 1)];
-    }
-
+- (void)sendKeypressForString:(NSString *)string {
     UIKeyboard *keyboard = [UIKeyboard activeKeyboard];
     if (keyboard) {
-        [keyboard _typeCharacter:c withError:CGPointZero shouldTypeVariants:NO baseKeyForVariants:NO];
+        for (int i=0; i<string.length; i++) {
+            NSRange range = NSMakeRange(i, 1);
+            NSString *singleChar = [string substringWithRange:range];
+            [keyboard _typeCharacter:singleChar withError:CGPointZero shouldTypeVariants:NO baseKeyForVariants:NO];
+        }
     }
 }
 @end

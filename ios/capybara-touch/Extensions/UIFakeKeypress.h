@@ -10,6 +10,6 @@
 #import <UIKit/UIKit.h>
 @interface UIFakeKeypress : NSObject
 
-- (void)sendKeypressForChar:(NSString *)c;
+- (void)sendKeypressForString:(NSString *)string;
 
 @end
