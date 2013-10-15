@@ -100,17 +100,11 @@
             };
         }
 
-        NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
-
-        NSLog(@"THE MESSAGE SO FAR: '%@'", inputString);
-        if (arguments.count < 2 ||
-            [arguments[1] isEqualToString:@""] ||
-            arguments.count < 2 + ([arguments[1] intValue] * 2) ||
-            inputString.length < [arguments[0] length] + [arguments[1] length] + [arguments[2] length] + [arguments[2] intValue]) {
+        if ([self inputIsIncomplete:inputString]) {
             self.incompleteIncomingMessage = inputString;
             return;
         } else {
-            NSLog(@"Full received message: '%@'", inputString);
+            NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
 
             NSString *command = arguments[0];
             NSInteger numberOfArguments = [arguments[1] intValue];
@@ -131,12 +125,12 @@
             NSLog(@"Interpreted command: '%@' arguments:'%@'", command, commandArgument);
             SEL commandSelector = [self delegateMethodFromCommand:command];
 
-            #pragma clang diagnostic push
-            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             if ([self.delegate respondsToSelector:commandSelector]) {
                 [self.delegate performSelector:commandSelector withObject:commandArgument];
             }
-            #pragma clang diagnostic pop
+#pragma clang diagnostic pop
 
             self.incompleteIncomingMessage = nil;
         }
@@ -153,6 +147,21 @@
 }
 
 #pragma mark - Private
+- (BOOL)inputIsIncomplete:(NSString *)inputString {
+    NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
+    BOOL isInvalid = (arguments.count < 2 ||
+                      [arguments[1] isEqualToString:@""] ||
+                      arguments.count < 2 + ([arguments[1] intValue] * 2));
+    if (!isInvalid) {
+        NSUInteger length = inputString.length < [arguments[0] length] + [arguments[1] length];
+        for (int i = 0; i < [arguments[1] intValue]; i++) {
+            length += [arguments[2+i] length] + [arguments[2+i] intValue] + 1; // The extra 1 is the second line's newline
+        }
+        isInvalid = (inputString.length < length);
+    }
+    return isInvalid;
+}
+
 - (SEL)delegateMethodFromCommand:(NSString *)command {
     NSString *commandSelector = self.commandMapping[command];
 

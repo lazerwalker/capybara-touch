@@ -163,7 +163,7 @@ describe(@"CTInterface", ^{
 
         context(@"when the message is not complete but is later completed", ^{
             it(@"should make a valid call", ^{
-                NSString *firstHalf = @"Visit\n1\n";
+                NSString *firstHalf = @"Node\n2\n";
                 interface.inputStream = [[NSInputStream alloc] initWithData:[firstHalf dataUsingEncoding:NSUTF8StringEncoding]];
                 [interface.inputStream open];
                 interface.outputStream = nice_fake_for([NSOutputStream class]);
@@ -173,12 +173,12 @@ describe(@"CTInterface", ^{
                 [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
                 [(id<CedarDouble>)interface.delegate sent_messages] should be_empty;
 
-                NSString *secondHalf = @"17\nhttp://google.com";
+                NSString *secondHalf = @"3\nfoo\n1\n1";
                 interface.inputStream = [[NSInputStream alloc] initWithData:[secondHalf dataUsingEncoding:NSUTF8StringEncoding]];
                 [interface.inputStream open];
 
                 [interface stream:interface.inputStream handleEvent:NSStreamEventHasBytesAvailable];
-                interface.delegate should have_received(@selector(visit:)).with(@"http://google.com");
+                interface.delegate should have_received(@selector(javascriptCommand:)).with(@[@"foo",@"1"]);
             });
         });
     });
