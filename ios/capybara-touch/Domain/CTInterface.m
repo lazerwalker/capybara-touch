@@ -105,6 +105,9 @@
             return;
         } else {
             NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
+            if ([arguments[0] isEqualToString:@""]) {
+                arguments = [arguments subarrayWithRange:NSMakeRange(1,arguments.count - 1)];
+            }
 
             NSString *command = arguments[0];
             NSInteger numberOfArguments = [arguments[1] intValue];
@@ -149,19 +152,24 @@
 #pragma mark - Private
 - (BOOL)inputIsIncomplete:(NSString *)inputString {
     NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
-    NSMutableArray *tempArray = [arguments mutableCopy];
-    [tempArray removeObject:@""];
+
+    NSMutableArray *tempArray = [NSMutableArray array];
+
+    for (NSString *arg in arguments) {
+        if (![arg isEqualToString:@""]) {
+            [tempArray addObject:arg];
+        }
+    }
     arguments = [tempArray copy];
 
     BOOL isInvalid = (arguments.count < 2 ||
-                      [arguments[1] isEqualToString:@""] ||
+                      [arguments[1] length] < 1 ||
                       arguments.count < 2 + ([arguments[1] intValue] * 2));
     if (!isInvalid) {
         NSUInteger length = inputString.length < [arguments[0] length] + [arguments[1] length];
         for (int i = 0; i < [arguments[1] intValue]; i++) {
-            length += [arguments[2+i] length] + [arguments[2+i] intValue];
+            length += [arguments[2+i] length] + [arguments[2+i] intValue] + 1;
         }
-        length += 1; // The last newline
         isInvalid = (inputString.length < length);
     }
     return isInvalid;
