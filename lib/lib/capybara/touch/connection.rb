@@ -70,7 +70,7 @@ module Capybara::Touch
         Process.kill("INT", @pid)
       end
     rescue Errno::ESRCH
-      # This just means that the webkit_server process has already ended
+      # This just means that the process has already ended
     end
 
     def discover_port
