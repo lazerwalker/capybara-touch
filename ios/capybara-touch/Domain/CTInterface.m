@@ -60,8 +60,6 @@
 
 #pragma mark - TCPServerDelegateProtocol
 - (void)TCPServer:(TCPServer *)server didReceiveConnectionFromAddress:(NSData *)addr inputStream:(NSInputStream *)inputStream outputStream:(NSOutputStream *)outputStream {
-    NSLog(@"Received connection from address: %@", addr);
-
     if ([inputStream streamStatus] == NSStreamStatusNotOpen) {
         [inputStream open];
     }
@@ -125,7 +123,6 @@
                 commandArgument = [args copy];
             }
 
-            NSLog(@"Interpreted command: '%@' arguments:'%@'", command, commandArgument);
             SEL commandSelector = [self delegateMethodFromCommand:command];
 
 #pragma clang diagnostic push
@@ -140,9 +137,7 @@
     } else if (stream == self.outputStream && streamEvent == NSStreamEventHasSpaceAvailable) {
         if (self.messageQueue.count > 0) {
             NSInteger result = [self streamOutgoingMessage:self.messageQueue[0]];
-            if (result == -1) {
-                NSLog(@"Error sending outgoing message: '%@'", self.messageQueue[0]);
-            } else {
+            if (result != -1) {
                 [self.messageQueue removeObjectAtIndex:0];
             }
         }
@@ -186,7 +181,6 @@
 }
 
 - (NSInteger)streamOutgoingMessage:(NSString *)message {
-    NSLog(@"==========> Sending message: '%@'", message);
     const uint8_t *messageBuffer = (const uint8_t *)[message UTF8String];
     return [self.outputStream write:messageBuffer maxLength:strlen(messageBuffer)];
 }

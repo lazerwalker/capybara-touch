@@ -36,8 +36,6 @@
 #pragma mark - CTCapybaraDelegate methods
 
 - (void)visit:(NSString *)urlString {
-    NSLog(@"Loading URL: %@", urlString);
-
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
@@ -51,7 +49,6 @@
 - (void)findXpath:(NSString *)xpath {
     NSString *jsString = [NSString stringWithFormat:@"Capybara.findXpath(\"%@\");", xpath];
     NSString *result = [self execute:jsString];
-    NSLog(@"Result = %@", result);
 
     [self.interface sendSuccessMessage:result];
 }
@@ -71,7 +68,6 @@
     NSString *js = [NSString stringWithFormat:@"Capybara.%@(%@);", command, [args componentsJoinedByString:@", "]];
 
     NSString *result = [self execute:js];
-    NSLog(@"JS Result: %@", result);
     if (![result isEqualToString:@"wait"]) {
         if ([result isEqualToString:@""]) {
             result = @"false";

@@ -24,7 +24,6 @@
     self.view = self.client.webView;
     self.view.frame = frame;
 
-    NSLog(@"Connecting to client");
     [self.client connect];
 }
 

@@ -30,7 +30,6 @@
 
 - (void)sendEventForPhase:(UITouchPhase)phase {
     CGPoint adjustedPoint = [self.view convertPoint:self.point toView:self.view.window];
-    NSLog(@"Creating a point at %@", NSStringFromCGPoint(adjustedPoint));
 
     uint8_t touchEvent[sizeof(GSEventRecord) + sizeof(GSHandInfo) + sizeof(GSPathInfo)];
     struct GSTouchEvent {
