@@ -7,6 +7,10 @@ end
 
 require "capybara/touch/driver"
 
-Capybara.register_driver :ios do |app|
-  Capybara::Touch::Driver.new(app)
+Capybara.register_driver :iphone do |app|
+  Capybara::Touch::Driver.new(app, device: :iphone)
+end
+
+Capybara.register_driver :ipad do |app|
+  Capybara::Touch::Driver.new(app, device: :ipad)
 end

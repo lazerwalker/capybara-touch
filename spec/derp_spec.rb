@@ -2,7 +2,7 @@ require 'capybara/rspec'
 require 'capybara-touch'
 require 'capybara-webkit'
 
-Capybara.default_driver = :ios
+Capybara.default_driver = :iphone
 
 describe "when searching for kitties", :type => :feature do
   it "should show some kitties" do

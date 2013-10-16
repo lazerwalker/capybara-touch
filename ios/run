@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/Dropbox/Code/capybara-touch/ios && rake run
+DEVICE=$DEVICE cd ~/Dropbox/Code/capybara-touch/ios && rake run

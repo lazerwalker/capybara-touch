@@ -11,6 +11,7 @@ module Capybara::Touch
     attr_reader :port
 
     def initialize(options = {})
+      @device = options[:device]
       @socket_class = options[:socket_class] || TCPSocket
       if options.has_key?(:stderr)
         @output_target = options[:stderr]
@@ -49,7 +50,7 @@ module Capybara::Touch
     end
 
     def open_pipe
-      _, @pipe_stdout, @pipe_stderr, wait_thr = Open3.popen3(SERVER_PATH)
+      _, @pipe_stdout, @pipe_stderr, wait_thr = Open3.popen3("DEVICE=#{@device.to_s} #{SERVER_PATH}")
       @pid = wait_thr[:pid]
       register_shutdown_hook
     end

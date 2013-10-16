@@ -34,6 +34,7 @@ def kill_simulator
   system %Q[killall -m -KILL "gdb"]
   system %Q[killall -m -KILL "otest"]
   system %Q[killall -m -KILL "iPhone Simulator"]
+  system %Q[killall -m -KILL "iPad Simulator"]
 end
 
 def output_file(target)
@@ -58,6 +59,9 @@ require 'tmpdir'
 
 desc "Run app"
 task :run => :build do
+  ENV["DEVICE"] = "iphone" if ENV["DEVICE"].nil?
+  return unless ["ipad", "iphone"].include?(ENV["DEVICE"])
+
   kill_simulator
-  system_or_exit "ios-sim launch #{File.join(build_dir("-iphonesimulator"), "#{APP_TARGET_NAME}.app")} --sdk 6.1"
+  system_or_exit "ios-sim launch #{File.join(build_dir("-iphonesimulator"), "#{APP_TARGET_NAME}.app")} --sdk 6.1 --family #{ENV["DEVICE"]}"
 end
