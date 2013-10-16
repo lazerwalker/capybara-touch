@@ -1,14 +1,12 @@
 capybara-touch
 ===============
 
-A [capybara](https://github.com/jnicklas/capybara) driver that uses Mobile Webkit via the iOS Simulator. 
-
-As capybara-touch requires the iOS SDK and development toolchain, it is only supported on Mac OS X.
+A [capybara](https://github.com/jnicklas/capybara) driver that runs your tests against Mobile Webkit via the iOS Simulator. 
 
 Installation and Xcode
 -------------------------------------
 
-capybara-touch requires Xcode, the iOS SDK, and the Xcode Command Line Tools. Xcode and the iOS SDK can be downloaded as a combined package for free from [Apple](https://developer.apple.com/xcode/). The Xcode Command Line tools can be downloaded from within the Downloads tab of the Xcode Preferences window, accessible from the Xcode menubar option, or directly from Apple's [Xcode Downloads Page](https://developer.apple.com/downloads/index.action?name=Xcode) (requires login).
+Capybara-touch requires Xcode, the iOS SDK, and the Xcode Command Line Tools. As such, it is only officially supported on OS X. Xcode and the iOS SDK can be downloaded as a combined package for free from [Apple](https://developer.apple.com/xcode/). The Xcode Command Line tools can be downloaded from within the Downloads tab of the Xcode Preferences window, accessible from the Xcode menubar option, or directly from Apple's [Xcode Downloads Page](https://developer.apple.com/downloads/index.action?name=Xcode) (requires login).
 
 Currently, capybara-touch also requires the iOS 6.1 simulator. You can still use Xcode 5 and the latest iOS 7 SDK, but the tests themselves must actually be run against the 6.1 simulator, which can be installed from the Downloads tab of the Xcode Preferences pane.
 
@@ -30,16 +28,15 @@ gem "capybara-touch"
 In your Capybara tests, set the driver to either `:iphone` or `:ipad`, depending on which device family you would like to target:
 
 ```ruby
-	Capybara.default_driver = :ipad
+Capybara.default_driver = :ipad
 ```
 
 Goals
 -----
-capybara-touch will be considered to be at version 1.0 when it is fully usable as a drop-in replacement in any Capybara test suite with a select number of mobile-specific conveniences. This means:
+Capybara-touch will be considered to be at version 1.0 when it is fully usable as a drop-in replacement in any Capybara test suite, in addition to having a select number of mobile-specific conveniences. This means:
 
 * Full compatibility with the official Capybara test sute
-* Support for any combination of device types and iOS versions (including iOS 7)
-* Ability to run on a physical device instead of just the simulator
+* Support for any reasonable combination of device types and iOS versions (including iOS 7)
 * Driver-specific Capybara commands for mobile-only functionality such as the accelerometer, location services, and gestures.
 
 About
