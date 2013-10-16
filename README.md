@@ -19,10 +19,10 @@ This is alpha software. You will find that many pieces of Capybara functionality
 Usage
 -----
 
-Add the capybara-touch gem to your Gemfile:
+Add the capybara-touch gem to your Gemfile (use git for now; it will be added to Rubygems very soon, once the rate of development slows slightly):
 
 ```ruby
-gem "capybara-touch"
+gem "capybara-touch", git: "git://github.com/lazerwalker/capybara-touch"
 ```
 
 In your Capybara tests, set the driver to either `:iphone` or `:ipad`, depending on which device family you would like to target:

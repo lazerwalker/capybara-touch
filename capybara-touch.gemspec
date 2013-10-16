@@ -7,7 +7,8 @@ Gem::Specification.new do |s|
   s.authors  = ["Mike Walker"]
   s.email    = "michael@lazerwalker.com"
   s.homepage = "http://github.com/lazerwalker/capybara-touch"
-  s.summary  = "Mobile Webkit driver for Capybara"
+  s.summary  = "A Capybara driver for Mobile Webkit on the iOS Simulator"
+  s.description  = s.summary
 
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- {spec,features}/*`.split("\n")
