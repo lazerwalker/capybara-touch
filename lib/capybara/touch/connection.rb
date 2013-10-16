@@ -5,7 +5,7 @@ require 'open3'
 
 module Capybara::Touch
   class Connection
-    SERVER_PATH = "~/Dropbox/Code/capybara-touch/ios/run"
+    SERVER_PATH = File.expand_path("../../../../ios/run.sh", __FILE__)
     WEBKIT_SERVER_START_TIMEOUT = 9999
 
     attr_reader :port
@@ -50,7 +50,7 @@ module Capybara::Touch
     end
 
     def open_pipe
-      _, @pipe_stdout, @pipe_stderr, wait_thr = Open3.popen3("DEVICE=#{@device.to_s} #{SERVER_PATH}")
+      _, @pipe_stdout, @pipe_stderr, wait_thr = Open3.popen3("export DEVICE=#{@device.to_s} && #{SERVER_PATH}")
       @pid = wait_thr[:pid]
       register_shutdown_hook
     end
