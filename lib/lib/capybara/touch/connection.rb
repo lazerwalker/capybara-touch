@@ -6,7 +6,6 @@ require 'open3'
 module Capybara::Touch
   class Connection
     SERVER_PATH = "~/Dropbox/Code/capybara-touch/ios/run"
-    # SERVER_PATH = File.expand_path("../../../../bin/webkit_server", __FILE__)
     WEBKIT_SERVER_START_TIMEOUT = 9999
 
     attr_reader :port
@@ -45,17 +44,13 @@ module Capybara::Touch
 
     def start_server
       @port = 9292
-      if (false)
-        open_pipe
-        discover_port
-        forward_output_in_background_thread
-      end
+      open_pipe
+      forward_output_in_background_thread
     end
 
     def open_pipe
       _, @pipe_stdout, @pipe_stderr, wait_thr = Open3.popen3(SERVER_PATH)
       @pid = wait_thr[:pid]
-      p "Trying to open pipe. pid = #{@pid}"
       register_shutdown_hook
     end
 

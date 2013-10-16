@@ -91,7 +91,7 @@ require 'tmpdir'
 
 desc "Run app"
 task :run => :build do
-  system_or_exit "ios-sim launch #{File.join(build_dir("-iphonesimulator"), "#{APP_TARGET_NAME}.app")}" # --stderr #{output_file("app_run")}"
+  system_or_exit "ios-sim launch #{File.join(build_dir("-iphonesimulator"), "#{APP_TARGET_NAME}.app")} --sdk 6.1" # --stderr #{output_file("app_run")}"
 end
 
 desc "Run UI specs"
