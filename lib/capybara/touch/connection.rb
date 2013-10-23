@@ -21,24 +21,31 @@ module Capybara::Touch
       else
         @output_target = $stderr
       end
-      start_server
+      @port = 9292
+      # start_server
       connect
     end
 
     def puts(string)
+      p "PUTS: '#{string}'"
       @socket.puts string
     end
 
     def print(string)
+      p "PRINT: '#{string}'"
       @socket.print string
     end
 
     def gets
-      @socket.gets
+      result = @socket.gets
+      p "GETS: '#{result}'"
+      result
     end
 
     def read(length)
-      @socket.read(length)
+      result = @socket.read(length)
+      p "READ: '#{result}'"
+      result
     end
 
     private

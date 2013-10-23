@@ -130,7 +130,10 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             if ([self.delegate respondsToSelector:commandSelector]) {
+                NSLog(@"Received command: '%@', arguments: '%@'", command, commandArgument);
                 [self.delegate performSelector:commandSelector withObject:commandArgument];
+            } else {
+                NSLog(@"Did not recognize command. Input string = '%@'", inputString);
             }
 #pragma clang diagnostic pop
 
@@ -183,6 +186,7 @@
 }
 
 - (NSInteger)streamOutgoingMessage:(NSString *)message {
+    NSLog(@"Sending outgoing message: '%@'", message);
     const uint8_t *messageBuffer = (const uint8_t *)[message UTF8String];
     return [self.outputStream write:messageBuffer maxLength:strlen(messageBuffer)];
 }
