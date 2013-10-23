@@ -47,7 +47,8 @@
 }
 
 - (void)findXpath:(NSString *)xpath {
-    NSString *jsString = [NSString stringWithFormat:@"Capybara.findXpath(\"%@\");", xpath];
+    NSString *escapedXpath = [xpath stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    NSString *jsString = [NSString stringWithFormat:@"Capybara.findXpath(\"%@\");", escapedXpath];
     NSString *result = [self execute:jsString];
 
     [self.interface sendSuccessMessage:result];
@@ -55,6 +56,10 @@
 
 - (void)reset {
     [self.interface sendSuccessMessage];
+}
+
+- (void)currentURL {
+    [self.interface sendSuccessMessage:self.webView.request.URL.absoluteString];
 }
 
 - (void)javascriptCommand:(NSArray *)arguments {
@@ -120,6 +125,7 @@
     return YES;
 }
 
+#pragma mark - Generate fake events
 - (void)tapAtPoint:(NSDictionary *)point {
     UIFakeTouch *touch = [[UIFakeTouch alloc] initInView:self.webView point:CGPointMake([point[@"x"] floatValue], [point[@"y"] floatValue])];
     [touch sendTap];

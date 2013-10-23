@@ -17,7 +17,8 @@
     return @{@"Visit": @"visit:",
              @"FindXpath": @"findXpath:",
              @"Reset": @"reset",
-             @"Node": @"javascriptCommand:"
+             @"Node": @"javascriptCommand:",
+             @"CurrentUrl": @"currentURL"
              };
 }
 

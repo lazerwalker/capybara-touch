@@ -51,6 +51,13 @@ describe(@"CTCapybaraClient", ^{
         });
     });
 
+    describe(@"currentURL", ^{
+        it(@"should return the current URL", ^{
+            [client visit:@"http://google.com"];
+            client.interface should have_received(@selector(sendSuccessMessage:)).with(@"http://google.com");
+        });
+    });
+
     describe(@"node", ^{
         it(@"should send the JS command on to the web view", ^{
             [client javascriptCommand:@[@"isAttached", @"[\"1\"]"]];

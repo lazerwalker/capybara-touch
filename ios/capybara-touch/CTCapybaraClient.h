@@ -7,6 +7,7 @@
 - (void)findXpath:(NSString *)xpath;
 - (void)reset;
 - (void)javascriptCommand:(NSArray *)arguments;
+- (void)currentURL;
 
 @end
 

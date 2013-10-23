@@ -159,6 +159,16 @@ describe(@"CTInterface", ^{
                     interface.delegate should have_received(@selector(javascriptCommand:)).with(@[@"isAttached", @"[\"1\"]"]);
                 });
             });
+
+            describe(@"current URL", ^{
+                beforeEach(^{
+                    eventString = @"CurrentUrl\n0";
+                });
+
+                it(@"should make the appropriate call", ^{
+                    interface.delegate should have_received(@selector(currentURL));
+                });
+            });
         });
 
         context(@"when the message is not complete but is later completed", ^{
