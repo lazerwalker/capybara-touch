@@ -1,7 +1,6 @@
-#import "TCPServer.h"
 #import "CTCapybaraClient.h"
 
-@interface CTInterface : NSObject<NSStreamDelegate, TCPServerDelegate>
+@interface CTInterface : NSObject
 
 @property (strong, nonatomic) id<CTCapybaraDelegate>delegate;
 

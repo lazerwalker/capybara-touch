@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>40679A6E-223F-4218-88AD-F0DEA9F8DB29</string>
+	<key>IDESourceControlProjectName</key>
+	<string>capybara-touch</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>791C020B-BA24-420A-97E3-80224C2F7A7E</key>
+		<string>ssh://github.com/lazerwalker/capybara-touch.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/capybara-touch.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>791C020B-BA24-420A-97E3-80224C2F7A7E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/lazerwalker/capybara-touch.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>791C020B-BA24-420A-97E3-80224C2F7A7E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>791C020B-BA24-420A-97E3-80224C2F7A7E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>capybara-touch</string>
+		</dict>
+	</array>
+</dict>
+</plist>

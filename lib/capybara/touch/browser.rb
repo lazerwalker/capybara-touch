@@ -149,6 +149,7 @@ module Capybara::Touch
         @connection.puts arg.to_s.bytesize
         @connection.puts arg.to_s
       end
+      @connection.puts "\r"
       check
       read_response
     end

@@ -1,7 +1,7 @@
 capybara-touch
 ===============
 
-A [capybara](https://github.com/jnicklas/capybara) driver that runs your tests against Mobile Webkit via the iOS Simulator. 
+A [capybara](https://github.com/jnicklas/capybara) driver that runs your tests against Mobile Webkit via the iOS Simulator.
 
 Installation and Xcode
 -------------------------------------
@@ -46,7 +46,7 @@ The capybara-touch driver was written by Mike Walker. He can be reached at micha
 
 A significant portion of the Ruby and JavaScript code was lovingly borrowed from the [capybara-webkit](https://github.com/thoughtbot/capybara-webkit) project.
 
-
+The Objective-C TCP client code comes from [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket/), a quite lovely little library for that sort of thing.
 
 License
 -------

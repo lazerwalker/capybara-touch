@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10009084793741EABF29C09B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D84C3AB00344346A2EDDB40 /* libPods.a */; };
 		A60AA62D18032462000A59C4 /* NSArray+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */; };
 		A60AA62E18032462000A59C4 /* NSArray+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */; };
 		A60FFD1B1779059A00A850CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FFD1A1779059A00A850CD /* UIKit.framework */; };
@@ -20,7 +21,6 @@
 		A60FFD311779059A00A850CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A60FFD301779059A00A850CD /* Default-568h@2x.png */; };
 		A60FFD341779059A00A850CD /* CTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD331779059A00A850CD /* CTViewController.m */; };
 		A60FFD41177905D000A850CD /* capybara.js in Resources */ = {isa = PBXBuildFile; fileRef = A60FFD40177905D000A850CD /* capybara.js */; };
-		A60FFD4517790E7E00A850CD /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FFD4417790E7E00A850CD /* TCPServer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A623F81D18045D3D00F8A42F /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A623F81C18045D3D00F8A42F /* UIFakeTouch.m */; };
 		A623F81E18045D3D00F8A42F /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A623F81C18045D3D00F8A42F /* UIFakeTouch.m */; };
 		A640092F180C4189000FE62E /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = A640092E180C4189000FE62E /* UIFakeKeypress.m */; };
@@ -40,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		652800972FF64B3F80EFF4E1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		7D84C3AB00344346A2EDDB40 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60AA62B18032462000A59C4 /* NSArray+Enumerable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Enumerable.h"; path = "Extensions/NSArray+Enumerable.h"; sourceTree = "<group>"; };
 		A60AA62C18032462000A59C4 /* NSArray+Enumerable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Enumerable.m"; path = "Extensions/NSArray+Enumerable.m"; sourceTree = "<group>"; };
 		A60FFD171779059A00A850CD /* capybara-touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "capybara-touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,8 +60,6 @@
 		A60FFD321779059A00A850CD /* CTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTViewController.h; sourceTree = "<group>"; };
 		A60FFD331779059A00A850CD /* CTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTViewController.m; sourceTree = "<group>"; };
 		A60FFD40177905D000A850CD /* capybara.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = capybara.js; sourceTree = "<group>"; };
-		A60FFD4317790E7E00A850CD /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPServer.h; sourceTree = "<group>"; };
-		A60FFD4417790E7E00A850CD /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPServer.m; sourceTree = "<group>"; };
 		A623F81B18045D3D00F8A42F /* UIFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIFakeTouch.h; path = Extensions/UIFakeTouch.h; sourceTree = "<group>"; };
 		A623F81C18045D3D00F8A42F /* UIFakeTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIFakeTouch.m; path = Extensions/UIFakeTouch.m; sourceTree = "<group>"; };
 		A640092D180C4189000FE62E /* UIFakeKeypress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIFakeKeypress.h; path = Extensions/UIFakeKeypress.h; sourceTree = "<group>"; };
@@ -106,6 +106,7 @@
 				A60FFD1B1779059A00A850CD /* UIKit.framework in Frameworks */,
 				A60FFD1D1779059A00A850CD /* Foundation.framework in Frameworks */,
 				A60FFD1F1779059A00A850CD /* CoreGraphics.framework in Frameworks */,
+				10009084793741EABF29C09B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +145,7 @@
 				A6FDB5F917FB598D00494C4B /* Specs */,
 				A60FFD191779059A00A850CD /* Frameworks */,
 				A60FFD181779059A00A850CD /* Products */,
+				652800972FF64B3F80EFF4E1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +166,7 @@
 				A60FFD1C1779059A00A850CD /* Foundation.framework */,
 				A60FFD1E1779059A00A850CD /* CoreGraphics.framework */,
 				A6FDB5F417FB598D00494C4B /* SenTestingKit.framework */,
+				7D84C3AB00344346A2EDDB40 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,7 +176,6 @@
 			children = (
 				A60AA62A18032452000A59C4 /* Extensions */,
 				A6EDC1EE17FB2D8100841538 /* Domain */,
-				A60FFD4217790E6F00A850CD /* External */,
 				A60FFD291779059A00A850CD /* CTAppDelegate.h */,
 				A60FFD2A1779059A00A850CD /* CTAppDelegate.m */,
 				A60FFD321779059A00A850CD /* CTViewController.h */,
@@ -197,15 +199,6 @@
 				A60FFD301779059A00A850CD /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A60FFD4217790E6F00A850CD /* External */ = {
-			isa = PBXGroup;
-			children = (
-				A60FFD4317790E7E00A850CD /* TCPServer.h */,
-				A60FFD4417790E7E00A850CD /* TCPServer.m */,
-			);
-			name = External;
 			sourceTree = "<group>";
 		};
 		A652695B17FC84A70023FBC0 /* UI */ = {
@@ -306,9 +299,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A60FFD3D1779059A00A850CD /* Build configuration list for PBXNativeTarget "capybara-touch" */;
 			buildPhases = (
+				5800030245024381976F75ED /* Check Pods Manifest.lock */,
 				A60FFD131779059A00A850CD /* Sources */,
 				A60FFD141779059A00A850CD /* Frameworks */,
 				A60FFD151779059A00A850CD /* Resources */,
+				B8106F7F5F534C74A41A1EB6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -389,6 +384,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5800030245024381976F75ED /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		A6FDB5F117FB598D00494C4B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +411,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		B8106F7F5F534C74A41A1EB6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -417,7 +442,6 @@
 				A652695717FB84DE0023FBC0 /* CTCapybaraClient.m in Sources */,
 				A60FFD2B1779059A00A850CD /* CTAppDelegate.m in Sources */,
 				A60FFD341779059A00A850CD /* CTViewController.m in Sources */,
-				A60FFD4517790E7E00A850CD /* TCPServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +542,7 @@
 		};
 		A60FFD3E1779059A00A850CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652800972FF64B3F80EFF4E1 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -541,6 +566,7 @@
 		};
 		A60FFD3F1779059A00A850CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652800972FF64B3F80EFF4E1 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (

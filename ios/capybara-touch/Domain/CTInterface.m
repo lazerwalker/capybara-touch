@@ -1,14 +1,12 @@
 #import "CTInterface.h"
+#import <GCDAsyncSocket.h>
 
-@interface CTInterface ()
+static const NSUInteger SOCKET_TIMEOUT = 15;
 
-@property (strong, nonatomic) TCPServer *server;
-@property (strong, nonatomic) NSInputStream *inputStream;
-@property (strong, nonatomic) NSOutputStream *outputStream;
+@interface CTInterface ()<GCDAsyncSocketDelegate>
 
-@property (strong, nonatomic) NSMutableArray *messageQueue;
-
-@property (strong, nonatomic) NSString *incompleteIncomingMessage;
+@property (strong, nonatomic) GCDAsyncSocket *server;
+@property (strong, nonatomic) GCDAsyncSocket *socket;
 @end
 
 @implementation CTInterface
@@ -27,20 +25,19 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.server = [[TCPServer alloc] init];
-        self.messageQueue = [NSMutableArray array];
+        self.server = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+        self.server.delegate = self;
     }
     return self;
 }
 
 - (void)startWithPort:(NSInteger)port domain:(NSString *)domain {
-    self.server.port = port;
-    self.server.domain = domain;
-    NSError *error = [[NSError alloc] init];
-    [self.server start:&error];
-    self.server.delegate = self;
-
-    NSLog(@"listening on port: %d", port);
+    NSError *error;
+    if (![self.server acceptOnPort:port error:&error]) {
+        NSLog(@"Error starting the TCP server: %@", error);
+    } else {
+        NSLog(@"listening on port: %d", port);
+    }
 }
 
 - (void)sendSuccessMessage {
@@ -50,133 +47,64 @@
 - (void)sendSuccessMessage:(NSString *)message {
     NSString *successMessage = @"ok\n";
     if (message) {
-        successMessage = [NSString stringWithFormat:@"%@%d\n%@\n", successMessage, strlen(message.UTF8String), message];
+        successMessage = [NSString stringWithFormat:@"%@%lu\n%@", successMessage, strlen(message.UTF8String), message];
+        if ([successMessage characterAtIndex:successMessage.length-1] != '\n') {
+            successMessage = [successMessage stringByAppendingString:@"\n"];
+        }
     } else {
         successMessage = [successMessage stringByAppendingString:@"0\n"];
     }
 
-    if([self.outputStream hasSpaceAvailable]) {
-        [self streamOutgoingMessage:successMessage];
-    } else {
-        [self.messageQueue addObject:successMessage];
-    }
+    [self streamOutgoingMessage:successMessage];
 }
 
-#pragma mark - TCPServerDelegateProtocol
-- (void)TCPServer:(TCPServer *)server didReceiveConnectionFromAddress:(NSData *)addr inputStream:(NSInputStream *)inputStream outputStream:(NSOutputStream *)outputStream {
-    if ([inputStream streamStatus] == NSStreamStatusNotOpen) {
-        [inputStream open];
-    }
-    if ([outputStream streamStatus] == NSStreamStatusNotOpen) {
-        [outputStream open];
-    }
-
-    inputStream.delegate = self;
-    outputStream.delegate = self;
-
-    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-
-    self.inputStream = inputStream;
-    self.outputStream = outputStream;
+#pragma mark - GCDAsyncSocketDelegate
+- (void)socket:(GCDAsyncSocket *)sender didAcceptNewSocket:(GCDAsyncSocket *)newSocket {
+    self.socket = newSocket;
+    [self.socket readDataToData:[GCDAsyncSocket CRLFData] withTimeout:SOCKET_TIMEOUT tag:0];
 }
 
-#pragma mark - NSStreamDelegate
-- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
-    if (stream == self.inputStream && streamEvent == NSStreamEventHasBytesAvailable) {
-        NSMutableString *inputString;
-        if (self.incompleteIncomingMessage) {
-            inputString = [self.incompleteIncomingMessage mutableCopy];
-        } else {
-            inputString = [[NSMutableString alloc] init];
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+    NSData *strData = [data subdataWithRange:NSMakeRange(0, [data length] - 2)];
+    NSString *inputString = [[NSString alloc] initWithData:strData encoding:NSUTF8StringEncoding];
+
+    NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
+    NSString *command = arguments[0];
+    NSInteger numberOfArguments = [arguments[1] intValue];
+
+    // If there's only 1 argument, commandArgument should be a NSString containing it.
+    // Otherwise, it should be an NSArray.
+    id commandArgument;
+    if (numberOfArguments == 1) {
+        commandArgument = arguments[3];
+    } else if (numberOfArguments > 1) {
+        NSMutableArray *args = [NSMutableArray array];
+        for (int i = 0; i < numberOfArguments; i++) {
+            [args addObject:arguments[3 + (i*2)]];
         }
+        commandArgument = [args copy];
+    }
 
-        while ([self.inputStream hasBytesAvailable]) {
-            uint8_t inputBuffer[512];
-            NSInteger len = [self.inputStream read:inputBuffer maxLength:512];
-            if (len) {
-                NSString *tmpStr = [[NSString alloc] initWithBytes:inputBuffer length:len encoding:NSUTF8StringEncoding];
-                if (tmpStr) {
-                    [inputString appendString:tmpStr];
-                }
-            };
-        }
-
-        if ([self inputIsIncomplete:inputString]) {
-            self.incompleteIncomingMessage = inputString;
-            return;
-        } else {
-            NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
-            if ([arguments[0] isEqualToString:@""]) {
-                arguments = [arguments subarrayWithRange:NSMakeRange(1,arguments.count - 1)];
-            }
-
-            NSString *command = arguments[0];
-            NSInteger numberOfArguments = [arguments[1] intValue];
-
-            // If there's only 1 argument, commandArgument should be a NSString containing it.
-            // Otherwise, it should be an NSArray.
-            id commandArgument;
-            if (numberOfArguments == 1) {
-                commandArgument = arguments[3];
-            } else if (numberOfArguments > 1) {
-                NSMutableArray *args = [NSMutableArray array];
-                for (int i = 0; i < numberOfArguments; i++) {
-                    [args addObject:arguments[3 + (i*2)]];
-                }
-                commandArgument = [args copy];
-            }
-
-            SEL commandSelector = [self delegateMethodFromCommand:command];
+    SEL commandSelector = [self delegateMethodFromCommand:command];
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            if ([self.delegate respondsToSelector:commandSelector]) {
-                NSLog(@"Received command: '%@', arguments: '%@'", command, commandArgument);
-                [self.delegate performSelector:commandSelector withObject:commandArgument];
-            } else {
-                NSLog(@"Did not recognize command. Input string = '%@'", inputString);
-            }
-#pragma clang diagnostic pop
-
-            self.incompleteIncomingMessage = nil;
-        }
-    } else if (stream == self.outputStream && streamEvent == NSStreamEventHasSpaceAvailable) {
-        if (self.messageQueue.count > 0) {
-            NSInteger result = [self streamOutgoingMessage:self.messageQueue[0]];
-            if (result != -1) {
-                [self.messageQueue removeObjectAtIndex:0];
-            }
-        }
+    if ([self.delegate respondsToSelector:commandSelector]) {
+        NSLog(@"Received command: '%@', arguments: '%@'", command, commandArgument);
+        [self.delegate performSelector:commandSelector withObject:commandArgument];
+    } else {
+        NSLog(@"Did not recognize command. Input string = '%@'", inputString);
     }
+#pragma clang diagnostic pop
+}
+
+
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+{
+    self.socket = nil;
 }
 
 #pragma mark - Private
-- (BOOL)inputIsIncomplete:(NSString *)inputString {
-    NSArray *arguments = [inputString componentsSeparatedByString:@"\n"];
-
-    NSMutableArray *tempArray = [NSMutableArray array];
-
-    for (NSString *arg in arguments) {
-        if (![arg isEqualToString:@""]) {
-            [tempArray addObject:arg];
-        }
-    }
-    arguments = [tempArray copy];
-
-    BOOL isInvalid = (arguments.count < 2 ||
-                      [arguments[1] length] < 1 ||
-                      arguments.count < 2 + ([arguments[1] intValue] * 2));
-    if (!isInvalid) {
-        NSUInteger length = inputString.length < [arguments[0] length] + [arguments[1] length];
-        for (int i = 0; i < [arguments[1] intValue]; i++) {
-            length += [arguments[2+i] length] + [arguments[2+i] intValue] + 1;
-        }
-        isInvalid = (inputString.length < length);
-    }
-    return isInvalid;
-}
-
 - (SEL)delegateMethodFromCommand:(NSString *)command {
     NSString *commandSelector = self.commandMapping[command];
 
@@ -187,9 +115,10 @@
     }
 }
 
-- (NSInteger)streamOutgoingMessage:(NSString *)message {
+- (void)streamOutgoingMessage:(NSString *)message {
     NSLog(@"Sending outgoing message: '%@'", message);
-    const uint8_t *messageBuffer = (const uint8_t *)[message UTF8String];
-    return [self.outputStream write:messageBuffer maxLength:strlen(messageBuffer)];
+    NSData *messageData = [message dataUsingEncoding:NSUTF8StringEncoding];
+    [self.socket writeData:messageData withTimeout:SOCKET_TIMEOUT tag:0];
+    [self.socket readDataToData:[GCDAsyncSocket CRLFData] withTimeout:SOCKET_TIMEOUT tag:0];
 }
 @end
