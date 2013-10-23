@@ -169,6 +169,16 @@ describe(@"CTInterface", ^{
                     interface.delegate should have_received(@selector(currentURL));
                 });
             });
+
+            describe(@"body", ^{
+                beforeEach(^{
+                    eventString = @"Body\n0";
+                });
+
+                it(@"should make the appropriate call", ^{
+                    interface.delegate should have_received(@selector(body));
+                });
+            });
         });
 
         context(@"when the message is not complete but is later completed", ^{

@@ -8,6 +8,7 @@
 - (void)reset;
 - (void)javascriptCommand:(NSArray *)arguments;
 - (void)currentURL;
+- (void)body;
 
 @end
 

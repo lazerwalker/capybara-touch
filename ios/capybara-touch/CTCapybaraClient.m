@@ -62,6 +62,11 @@
     [self.interface sendSuccessMessage:self.webView.request.URL.absoluteString];
 }
 
+- (void)body {
+    NSString *result = [self execute:@"Capybara.body();"];
+    [self.interface sendSuccessMessage:result];
+}
+
 - (void)javascriptCommand:(NSArray *)arguments {
     NSString *command = arguments[0];
 

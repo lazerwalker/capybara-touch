@@ -31,14 +31,6 @@ Capybara = {
   nodes: {},
   attachedFiles: [],
 
-  invoke: function () {
-    try {
-      return this[CapybaraInvocation.functionName].apply(this, CapybaraInvocation.arguments);
-    } catch (e) {
-      CapybaraInvocation.error = e;
-    }
-  },
-
   findXpath: function (xpath) {
     return this.findXpathRelativeTo(document, xpath);
   },
@@ -351,16 +343,9 @@ Capybara = {
 
   equals: function(index, targetIndex) {
     return this.nodes[index] === this.nodes[targetIndex];
+  },
+
+  body: function() {
+    return document.querySelectorAll('body')[0].innerHTML;
   }
 };
-
-Capybara.ClickFailed = function(path, position) {
-  this.name = 'Capybara.ClickFailed';
-  this.message = 'Failed to click element ' + path;
-  if (position)
-    this.message += ' at position ' + position["absoluteX"] + ', ' + position["absoluteY"];
-  else
-    this.message += ' at unknown position';
-};
-Capybara.ClickFailed.prototype = new Error();
-Capybara.ClickFailed.prototype.constructor = Capybara.ClickFailed;

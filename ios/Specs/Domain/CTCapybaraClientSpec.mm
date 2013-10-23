@@ -58,6 +58,10 @@ describe(@"CTCapybaraClient", ^{
         });
     });
 
+    xdescribe(@"body", ^{
+
+    });
+
     describe(@"node", ^{
         it(@"should send the JS command on to the web view", ^{
             [client javascriptCommand:@[@"isAttached", @"[\"1\"]"]];

@@ -18,7 +18,8 @@
              @"FindXpath": @"findXpath:",
              @"Reset": @"reset",
              @"Node": @"javascriptCommand:",
-             @"CurrentUrl": @"currentURL"
+             @"CurrentUrl": @"currentURL",
+             @"Body": @"body"
              };
 }
 
