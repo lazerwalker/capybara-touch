@@ -4,12 +4,15 @@
 @protocol CTCapybaraDelegate<NSObject>
 
 - (void)visit:(NSString *)url;
-- (void)findXpath:(NSString *)xpath;
-- (void)findCSS:(NSString *)selector;
 - (void)reset;
 - (void)javascriptCommand:(NSArray *)arguments;
+
+- (void)findXpath:(NSString *)xpath;
+- (void)findCSS:(NSString *)selector;
+
 - (void)currentURL;
 - (void)body;
+- (void)title;
 
 @end
 

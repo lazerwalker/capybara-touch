@@ -46,32 +46,8 @@
     };
 }
 
-- (void)findXpath:(NSString *)xpath {
-    NSString *escapedXpath = [xpath stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-    NSString *jsString = [NSString stringWithFormat:@"Capybara.findXpath(\"%@\");", escapedXpath];
-    NSString *result = [self execute:jsString];
-
-    [self.interface sendSuccessMessage:result];
-}
-
-- (void)findCSS:(NSString *)selector {
-    NSString *escapedSelector = [selector stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-    NSString *jsString = [NSString stringWithFormat:@"Capybara.findCss(\"%@\");", escapedSelector];
-    NSString *result = [self execute:jsString];
-
-    [self.interface sendSuccessMessage:result];
-}
 - (void)reset {
     [self.interface sendSuccessMessage];
-}
-
-- (void)currentURL {
-    [self.interface sendSuccessMessage:self.webView.request.URL.absoluteString];
-}
-
-- (void)body {
-    NSString *result = [self execute:@"Capybara.body();"];
-    [self.interface sendSuccessMessage:result];
 }
 
 - (void)javascriptCommand:(NSArray *)arguments {
@@ -92,6 +68,38 @@
 
         [self.interface sendSuccessMessage:result];
     }
+}
+
+#pragma mark - Traversing the DOM
+- (void)findXpath:(NSString *)xpath {
+    NSString *escapedXpath = [xpath stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    NSString *jsString = [NSString stringWithFormat:@"Capybara.findXpath(\"%@\");", escapedXpath];
+    NSString *result = [self execute:jsString];
+
+    [self.interface sendSuccessMessage:result];
+}
+
+- (void)findCSS:(NSString *)selector {
+    NSString *escapedSelector = [selector stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    NSString *jsString = [NSString stringWithFormat:@"Capybara.findCss(\"%@\");", escapedSelector];
+    NSString *result = [self execute:jsString];
+
+    [self.interface sendSuccessMessage:result];
+}
+
+#pragma mark - Returning information
+- (void)currentURL {
+    [self.interface sendSuccessMessage:self.webView.request.URL.absoluteString];
+}
+
+- (void)body {
+    NSString *result = [self execute:@"Capybara.body();"];
+    [self.interface sendSuccessMessage:result];
+}
+
+- (void)title {
+    NSString *result = [self execute:@"document.title"];
+    [self.interface sendSuccessMessage:result];
 }
 
 #pragma mark - UIWebViewDelegate

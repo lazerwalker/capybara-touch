@@ -20,7 +20,8 @@
              @"Reset": @"reset",
              @"Node": @"javascriptCommand:",
              @"CurrentUrl": @"currentURL",
-             @"Body": @"body"
+             @"Body": @"body",
+             @"Title": @"title"
              };
 }
 
