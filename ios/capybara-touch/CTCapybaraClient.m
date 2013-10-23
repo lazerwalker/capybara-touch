@@ -54,6 +54,13 @@
     [self.interface sendSuccessMessage:result];
 }
 
+- (void)findCSS:(NSString *)selector {
+    NSString *escapedSelector = [selector stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    NSString *jsString = [NSString stringWithFormat:@"Capybara.findCss(\"%@\");", escapedSelector];
+    NSString *result = [self execute:jsString];
+
+    [self.interface sendSuccessMessage:result];
+}
 - (void)reset {
     [self.interface sendSuccessMessage];
 }

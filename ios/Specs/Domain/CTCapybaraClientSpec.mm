@@ -51,6 +51,21 @@ describe(@"CTCapybaraClient", ^{
         });
     });
 
+    describe(@"findCSS", ^{
+        it(@"should tell the web view to grab a CSS selector", ^{
+            [client findCSS:@"#foo"];
+            client.webView should have_received(@selector(stringByEvaluatingJavaScriptFromString:)).with(@"Capybara.findCSS(\"#foo\");");
+        });
+
+        it(@"should respond successfully", ^{
+            spy_on(client.webView);
+            client.webView stub_method(@selector(stringByEvaluatingJavaScriptFromString:)).and_return(@"1");
+            spy_on(client.interface);
+            [client findXpath:@"foo"];
+            client.interface should have_received(@selector(sendSuccessMessage:)).with(@"1");
+        });
+    });
+
     describe(@"currentURL", ^{
         it(@"should return the current URL", ^{
             [client visit:@"http://google.com"];

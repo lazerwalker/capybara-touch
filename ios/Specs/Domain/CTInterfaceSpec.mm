@@ -140,6 +140,16 @@ describe(@"CTInterface", ^{
                 });
             });
 
+            describe(@"find CSS", ^{
+                beforeEach(^{
+                    eventString = @"FindCss\n1\n7\n#second";
+                });
+
+                it(@"should make the appropriate call", ^{
+                    interface.delegate should have_received(@selector(findCSS:)).with(@"#second");
+                });
+            });
+
             describe(@"reset", ^{
                 beforeEach(^{
                     eventString = @"Reset\n0\n";

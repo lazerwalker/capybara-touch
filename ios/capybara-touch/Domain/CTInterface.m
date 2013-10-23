@@ -16,6 +16,7 @@
 - (NSDictionary *)commandMapping {
     return @{@"Visit": @"visit:",
              @"FindXpath": @"findXpath:",
+             @"FindCss": @"findCSS:",
              @"Reset": @"reset",
              @"Node": @"javascriptCommand:",
              @"CurrentUrl": @"currentURL",
