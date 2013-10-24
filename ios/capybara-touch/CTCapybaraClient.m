@@ -63,10 +63,6 @@
 
     NSString *result = [self execute:js];
     if (![result isEqualToString:@"wait"]) {
-        if ([result isEqualToString:@""]) {
-            result = @"false";
-        }
-
         [self.interface sendSuccessMessage:result];
     }
 }
