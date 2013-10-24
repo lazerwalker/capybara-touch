@@ -117,7 +117,7 @@ static const NSUInteger SOCKET_TIMEOUT = 15;
 
 - (void)streamOutgoingMessage:(NSString *)message {
     NSLog(@"Sending outgoing message: '%@'", message);
-    NSData *messageData = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *messageData = [[message stringByAppendingString:@"\r"] dataUsingEncoding:NSUTF8StringEncoding];
     [self.socket writeData:messageData withTimeout:SOCKET_TIMEOUT tag:0];
     [self.socket readDataToData:[GCDAsyncSocket CRLFData] withTimeout:SOCKET_TIMEOUT tag:0];
 }

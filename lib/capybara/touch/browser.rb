@@ -221,14 +221,15 @@ module Capybara::Touch
 
     def read_response
       response_length = @connection.gets.to_i
+      response = ""
       if response_length > 0
-        response = @connection.read(response_length + 1)
+        response << @connection.read(1) until (response[-1] == "\r")
+
         response.strip!
         response.force_encoding("UTF-8") if response.respond_to?(:force_encoding)
-        response
-      else
-        ""
+        p "Response = #{response}"
       end
+      response
     end
 
     def default_proxy_options

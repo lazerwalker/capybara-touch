@@ -43,9 +43,7 @@ module Capybara::Touch
     end
 
     def read(length)
-      result = @socket.read(length)
-      p "READ: '#{result}'"
-      result
+      @socket.read(length)
     end
 
     private
