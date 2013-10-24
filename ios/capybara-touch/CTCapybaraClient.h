@@ -14,6 +14,7 @@
 - (void)currentURL;
 - (void)body;
 - (void)title;
+- (void)headers;
 
 @end
 

@@ -71,7 +71,7 @@ module Capybara::Touch
     end
 
     def response_headers
-      Hash[command("Headers").split("\n").map { |header| header.split(": ") }]
+      JSON.parse(command("Headers"))
     end
 
     def current_url

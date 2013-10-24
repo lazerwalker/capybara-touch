@@ -19,6 +19,7 @@ static const NSUInteger SOCKET_TIMEOUT = 15;
              @"Node": @"javascriptCommand:",
              @"Execute": @"executeScript:",
              @"CurrentUrl": @"currentURL",
+             @"Headers": @"headers",
              @"Body": @"body",
              @"Title": @"title"
              };

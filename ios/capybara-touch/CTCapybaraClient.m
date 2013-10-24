@@ -10,6 +10,7 @@
 @property (copy, nonatomic) void (^webViewLoadCompletionBlock)();
 @property (strong, nonatomic) NSString *capybaraJS;
 @property (strong, nonatomic) UIFakeKeypress *fakeKeypress;
+@property (strong, nonatomic) NSDictionary *lastRequestHeaders;
 
 @end
 
@@ -107,8 +108,25 @@
     [self.interface sendSuccessMessage:result];
 }
 
+- (void)headers {
+    if (!self.lastRequestHeaders) return;
+
+    NSError *error;
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:self.lastRequestHeaders options:NSJSONWritingPrettyPrinted error:&error];
+
+    if (!jsonData) return;
+
+    NSString *headerString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    headerString = [headerString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
+
+    [self.interface sendSuccessMessage:headerString];
+}
+
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSCachedURLResponse *resp = [[NSURLCache sharedURLCache] cachedResponseForRequest:webView.request];
+    self.lastRequestHeaders = [(NSHTTPURLResponse*)resp.response allHeaderFields];
+
     [self injectCapybaraIntoCurrentPage];
 
     if (self.webViewLoadCompletionBlock) {
