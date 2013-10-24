@@ -155,7 +155,7 @@ module Capybara::Touch
     end
 
     def evaluate_script(script)
-      json = command('Evaluate', script)
+      json = command('Execute', script)
       JSON.parse("[#{json}]").first
     end
 

@@ -17,6 +17,7 @@ static const NSUInteger SOCKET_TIMEOUT = 15;
              @"FindCss": @"findCSS:",
              @"Reset": @"reset",
              @"Node": @"javascriptCommand:",
+             @"Execute": @"executeScript:",
              @"CurrentUrl": @"currentURL",
              @"Body": @"body",
              @"Title": @"title"

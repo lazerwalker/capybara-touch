@@ -70,6 +70,11 @@
     }
 }
 
+- (void)executeScript:(NSString *)script {
+    NSString *result = [self execute:script];
+    [self.interface sendSuccessMessage:result];
+}
+
 #pragma mark - Traversing the DOM
 - (void)findXpath:(NSString *)xpath {
     NSString *escapedXpath = [xpath stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
