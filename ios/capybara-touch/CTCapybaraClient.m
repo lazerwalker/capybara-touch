@@ -54,7 +54,12 @@
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    [self.interface sendSuccessMessage];
+    [self.webView loadHTMLString:@"" baseURL:nil];
+
+    CTInterface *interface = self.interface;
+    self.webViewLoadCompletionBlock = ^{
+        [interface sendSuccessMessage];
+    };
 }
 
 - (void)javascriptCommand:(NSArray *)arguments {
