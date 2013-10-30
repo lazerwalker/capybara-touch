@@ -182,8 +182,12 @@ Capybara = {
     var node = this.nodes[index];
     node.scrollIntoViewIfNeeded();
 
-    var pos = this.clickPosition(node);
-    CapybaraInvocation.leftClick(pos.x, pos.y);
+    var that = this;
+    setTimeout(function() {
+          var pos = that.clickPosition(node);
+          CapybaraInvocation.leftClick(pos.x, pos.y);
+        }, 0);
+
     return "wait";
   },
 

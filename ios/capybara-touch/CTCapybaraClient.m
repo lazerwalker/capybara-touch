@@ -183,20 +183,24 @@
 #pragma mark - Generate fake events
 - (void)tapAtPoint:(NSDictionary *)point {
     UIFakeTouch *touch = [[UIFakeTouch alloc] initInView:self.webView point:CGPointMake([point[@"x"] floatValue], [point[@"y"] floatValue])];
-    [touch sendTap];
 
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC));
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if (self.webView.isLoading) {
-            CTCapybaraClient *weakSelf = self;
-            self.webViewLoadCompletionBlock = ^{
-                [weakSelf.interface sendSuccessMessage];
-            };
-        } else {
-            [self.interface sendSuccessMessage];
-        }
-    });
 
+        [touch sendTap];
+
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            if (self.webView.isLoading) {
+                CTInterface *interface = self.interface;
+                self.webViewLoadCompletionBlock = ^{
+                    [interface sendSuccessMessage];
+                };
+            } else {
+                [self.interface sendSuccessMessage];
+            }
+        });
+    });
 }
 
 - (void)partialTapAtPoint:(NSDictionary *)point {
