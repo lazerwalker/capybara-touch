@@ -67,7 +67,7 @@
 
     NSArray *args = [arguments subarrayWithRange:NSMakeRange(1, arguments.count - 1)];
     args = [args map:^id(NSString *argument, NSUInteger idx) {
-        return [NSString stringWithFormat:@"\"%@\"", [self stripJsonArrayFromNodeIndex:argument]];
+        return [NSString stringWithFormat:@"\"%@\"", [self formatArgument:argument]];
     }];
 
     NSString *js = [NSString stringWithFormat:@"Capybara.%@(%@);", command, [args componentsJoinedByString:@", "]];
@@ -235,15 +235,18 @@
     [self execute:self.capybaraJS];
 }
 
-// Turns '["5"]' into "5"
-- (NSString *)stripJsonArrayFromNodeIndex:(NSString *)string {
+/** Does a couple of things to prepare strings for JS:
+ * 1. Turns '["5"]' into "5"
+ * 2. Escapes double-quote characters
+ **/
+- (NSString *)formatArgument:(NSString *)string {
     NSError *error;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[\\\"(\\d+)\\\"\\]" options:0 error:&error];
     NSTextCheckingResult *result = [regex firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
     if (result && result.numberOfRanges == 2) {
         return [string substringWithRange:[result rangeAtIndex:1]];
     } else {
-        return string;
+        return [string stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
     }
 }
 
