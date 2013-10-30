@@ -266,6 +266,8 @@ Capybara = {
     } else if (type === "checkbox" || type === "radio") {
       if (node.checked != (value === "true")) {
         this.leftClick(index);
+      } else {
+        return true;
       }
 
     } else if (type === "file") {
