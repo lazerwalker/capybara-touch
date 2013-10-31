@@ -68,7 +68,7 @@ module Capybara::Touch
     end
 
     def hover
-      invoke("hover")
+      raise Capybara::NotSupportedByDriverError
     end
 
     def drag_to(element)
