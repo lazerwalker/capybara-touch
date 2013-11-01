@@ -52,7 +52,7 @@ end
 
 desc "Build app"
 task :build do
-  system_or_exit "xcodebuild -workspace #{PROJECT_NAME}.xcworkspace -scheme #{APP_TARGET_NAME} -configuration #{CONFIGURATION} -sdk iphonesimulator build", output_file("app_build")
+  system_or_exit "xcodebuild -workspace #{PROJECT_NAME}.xcworkspace -scheme #{APP_TARGET_NAME} -configuration #{CONFIGURATION} -sdk iphonesimulator build CONFIGURATION_BUILD_DIR=#{build_dir("-iphonesimulator")}", output_file("app_build")
 end
 
 require 'tmpdir'
