@@ -227,7 +227,6 @@ module Capybara::Touch
 
         response.rstrip!
         response.force_encoding("UTF-8") if response.respond_to?(:force_encoding)
-        p "Response = #{response}"
       end
       response
     end

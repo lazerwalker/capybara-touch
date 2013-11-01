@@ -93,7 +93,6 @@ static const NSUInteger SOCKET_TIMEOUT = 15;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     if ([self.delegate respondsToSelector:commandSelector]) {
-        NSLog(@"Received command: '%@', arguments: '%@'", command, commandArgument);
         [self.delegate performSelector:commandSelector withObject:commandArgument];
     } else {
         NSLog(@"Did not recognize command. Input string = '%@'", inputString);
@@ -119,7 +118,6 @@ static const NSUInteger SOCKET_TIMEOUT = 15;
 }
 
 - (void)streamOutgoingMessage:(NSString *)message {
-    NSLog(@"Sending outgoing message: '%@'", message);
     NSData *messageData = [[message stringByAppendingString:@"\r"] dataUsingEncoding:NSUTF8StringEncoding];
     [self.socket writeData:messageData withTimeout:SOCKET_TIMEOUT tag:0];
     [self.socket readDataToData:[GCDAsyncSocket CRLFData] withTimeout:SOCKET_TIMEOUT tag:0];

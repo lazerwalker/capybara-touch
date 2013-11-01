@@ -27,19 +27,15 @@ module Capybara::Touch
     end
 
     def puts(string)
-      p "PUTS: '#{string}'"
       @socket.puts string
     end
 
     def print(string)
-      p "PRINT: '#{string}'"
       @socket.print string
     end
 
     def gets
-      result = @socket.gets
-      p "GETS: '#{result}'"
-      result
+      @socket.gets
     end
 
     def read(length)
