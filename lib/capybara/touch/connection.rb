@@ -22,7 +22,7 @@ module Capybara::Touch
         @output_target = $stderr
       end
       @port = 9292
-      # start_server
+      start_server
       connect
     end
 

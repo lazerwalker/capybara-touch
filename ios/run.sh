@@ -1,2 +1,3 @@
 #!/bin/bash
-DEVICE=$DEVICE cd ~/Dropbox/Code/capybara-touch/ios && rake run
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DEVICE=$DEVICE cd $DIR && rake run
