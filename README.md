@@ -3,6 +3,8 @@ capybara-touch
 
 A [capybara](https://github.com/jnicklas/capybara) driver that runs your tests against Mobile Webkit via the iOS Simulator.
 
+**WARNING**: This only works on iOS 6 and below. Chances are, that means it's likely not useful for you as-is.
+
 Installation and Xcode
 -------------------------------------
 
